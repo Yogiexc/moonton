@@ -1,4 +1,4 @@
-import Input from '@/Components/Input';
+import Input from '@/Components/Input';   
 
 export default function Login() {
     return <div className="mx-auto max-w-screen min-h-screen bg-black text-white md:px-10 px-3">
