@@ -2,6 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "input.css";
+@import "button.css";
 
 /* Menghilangkan pseudo-element sebelum/sesudah */
 .flex::before,
