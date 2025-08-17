@@ -4500,6 +4500,82 @@ Dropdown.Link = DropdownLink;
 
 /***/ }),
 
+/***/ "./resources/js/Components/FeaturedMovie.js":
+/*!**************************************************!*\
+  !*** ./resources/js/Components/FeaturedMovie.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ FeaturedMovie)
+/* harmony export */ });
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+FeaturedMovie.propTypes = {
+  slug: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
+  name: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
+  category: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
+  thumnail: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
+  rating: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().number)
+};
+function FeaturedMovie(_ref) {
+  var slug = _ref.slug,
+      name = _ref.name,
+      category = _ref.category,
+      thumbnail = _ref.thumbnail,
+      _ref$rating = _ref.rating,
+      rating = _ref$rating === void 0 ? 0 : _ref$rating;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    className: "absolute overflow-hidden group mr-[30px]",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+      src: thumbnail,
+      className: "object-cover rounded-[30px] w-[520px] h-[340px]",
+      alt: ""
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "rating absolute top-0 left-0",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        className: "p-[30px] flex items-center gap-1",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+          src: "/assets/icons/ic_star.svg",
+          alt: ""
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
+          className: "text-sm font-medium text-white mt-1",
+          children: [rating.toFixed(1), "/5.0"]
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      className: "absolute bottom-0 h-[100px] left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px]\r rounded-br-[28px] flex justify-between items-center px-7 h-[130px]",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          className: "font-medium text-[22px] text-white",
+          children: name
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+          className: "mb-0 text-white text-sm font-light",
+          children: category
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "translate-x-[100px] group-hover:translate-x-0 transition ease-in-out duration-500",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+          src: "/icons/ic_play.svg",
+          width: "50",
+          alt: ""
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+      href: slug,
+      className: "inset-0 absolute z-50"
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/Components/Input.js":
 /*!******************************************!*\
   !*** ./resources/js/Components/Input.js ***!
@@ -4606,6 +4682,68 @@ function Label(_ref) {
     htmlFor: forInput,
     className: "text-base block mb-2" + className,
     children: value ? value : children
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Components/MovieCard.js":
+/*!**********************************************!*\
+  !*** ./resources/js/Components/MovieCard.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ MovieCard)
+/* harmony export */ });
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+MovieCard.propTypes = {
+  slug: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
+  name: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
+  category: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
+  thumbnail: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired)
+};
+function MovieCard(_ref) {
+  var slug = _ref.slug,
+      name = _ref.name,
+      category = _ref.category,
+      thumbnail = _ref.thumbnail;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    className: "absolute group overflow-hidden mr-[30px]",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+      src: thumbnail,
+      className: "object-cover rounded-[30px] h-[340px] w-[250px]",
+      alt: ""
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px]",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        className: "px-7 pb-7",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          className: "font-medium text-xl text-white",
+          children: name
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+          className: "mb-0 text-gray-300 text-base mt-[10px]",
+          children: category
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "absolute top-1/2 left-1/2 -translate-y-[500px] group-hover:-translate-y-1/2\r -translate-x-1/2 z-20 transition ease-in-out duration-500",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+        src: "/icons/ic_play.svg",
+        width: "50",
+        alt: ""
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+      href: slug,
+      className: "inset-0 absolute z-50"
+    })]
   });
 }
 
@@ -4893,6 +5031,340 @@ function Authenticated(_ref) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("main", {
       children: children
     })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Layouts/Authenticated/Index.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/Layouts/Authenticated/Index.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Authenticated)
+/* harmony export */ });
+/* harmony import */ var _Layouts_Authenticated_Sidebar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/Authenticated/Sidebar */ "./resources/js/Layouts/Authenticated/Sidebar.js");
+/* harmony import */ var _Layouts_Authenticated_Topbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/Authenticated/Topbar */ "./resources/js/Layouts/Authenticated/Topbar.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+function Authenticated(_ref) {
+  var children = _ref.children;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "mx-auto max-w-screen hidden lg:block"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Layouts_Authenticated_Sidebar__WEBPACK_IMPORTED_MODULE_0__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "ml-[300px] px-[50px]",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "py-10 flex flex-col gap-[50px]",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Layouts_Authenticated_Topbar__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("main", {
+          children: children
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "mx-auto px-4 w-full h-screen lg:hidden flex bg-black",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "text-white text-2xl text-center leading-snug font-medium my-auto",
+        children: "Sorry, this page only supported on 1024px screen or above"
+      })
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Layouts/Authenticated/Sidebar.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/Layouts/Authenticated/Sidebar.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Sidebar)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function Sidebar() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("aside", {
+    className: "fixed z-50 w-[300px] h-full",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      className: "flex flex-col p-[30px] pr-0 border-r border-gray-[#F1F1F1] overflow-y-auto h-full",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+        href: "/",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+          src: "/images/moonton.svg",
+          alt: ""
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        className: "links flex flex-col mt-[60px] h-full gap-[50px]",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+            className: "text-gray-1 text-sm mb-4",
+            children: "Menu"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
+            href: "/",
+            className: "side-link active",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+              width: "24",
+              height: "24",
+              viewBox: "0 0 24 24",
+              fill: "currentColor",
+              xmlns: "http://www.w3.org/2000/svg",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
+                id: "Iconly/Bulk/Home",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
+                  id: "Home",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                    id: "Home_2",
+                    d: "M9.14373 20.7821V17.7152C9.14372 16.9381 9.77567 16.3067 10.5584 16.3018H13.4326C14.2189 16.3018 14.8563 16.9346 14.8563 17.7152V17.7152V20.7732C14.8563 21.4473 15.404 21.9951 16.0829 22H18.0438C18.9596 22.0023 19.8388 21.6428 20.4872 21.0007C21.1356 20.3586 21.5 19.4868 21.5 18.5775V9.86585C21.5 9.13139 21.1721 8.43471 20.6046 7.9635L13.943 2.67427C12.7785 1.74912 11.1154 1.77901 9.98539 2.74538L3.46701 7.9635C2.87274 8.42082 2.51755 9.11956 2.5 9.86585V18.5686C2.5 20.4637 4.04738 22 5.95617 22H7.87229C8.19917 22.0023 8.51349 21.8751 8.74547 21.6464C8.97746 21.4178 9.10793 21.1067 9.10792 20.7821H9.14373Z"
+                  })
+                })
+              })
+            }), "Discover"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
+            href: "#!",
+            className: "side-link",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+              width: "24",
+              height: "24",
+              viewBox: "0 0 24 24",
+              fill: "currentColor",
+              xmlns: "http://www.w3.org/2000/svg",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                fillRule: "evenodd",
+                clipRule: "evenodd",
+                d: "M15.8498 2.50071C16.4808 2.50071 17.1108 2.58971 17.7098 2.79071C21.4008 3.99071 22.7308 8.04071 21.6198 11.5807C20.9898 13.3897 19.9598 15.0407 18.6108 16.3897C16.6798 18.2597 14.5608 19.9197 12.2798 21.3497L12.0298 21.5007L11.7698 21.3397C9.48077 19.9197 7.34977 18.2597 5.40077 16.3797C4.06077 15.0307 3.02977 13.3897 2.38977 11.5807C1.25977 8.04071 2.58977 3.99071 6.32077 2.76971C6.61077 2.66971 6.90977 2.59971 7.20977 2.56071H7.32977C7.61077 2.51971 7.88977 2.50071 8.16977 2.50071H8.27977C8.90977 2.51971 9.51977 2.62971 10.1108 2.83071H10.1698C10.2098 2.84971 10.2398 2.87071 10.2598 2.88971C10.4808 2.96071 10.6898 3.04071 10.8898 3.15071L11.2698 3.32071C11.3616 3.36968 11.4647 3.44451 11.5537 3.50918C11.6102 3.55015 11.661 3.58705 11.6998 3.61071C11.7161 3.62034 11.7327 3.63002 11.7494 3.63978C11.8351 3.68983 11.9245 3.74197 11.9998 3.79971C13.1108 2.95071 14.4598 2.49071 15.8498 2.50071ZM18.5098 9.70071C18.9198 9.68971 19.2698 9.36071 19.2998 8.93971V8.82071C19.3298 7.41971 18.4808 6.15071 17.1898 5.66071C16.7798 5.51971 16.3298 5.74071 16.1798 6.16071C16.0398 6.58071 16.2598 7.04071 16.6798 7.18971C17.3208 7.42971 17.7498 8.06071 17.7498 8.75971V8.79071C17.7308 9.01971 17.7998 9.24071 17.9398 9.41071C18.0798 9.58071 18.2898 9.67971 18.5098 9.70071Z"
+              })
+            }), "Your Favorites"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
+            href: "#!",
+            className: "side-link",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+              width: "24",
+              height: "24",
+              viewBox: "0 0 24 24",
+              fill: "currentColor",
+              xmlns: "http://www.w3.org/2000/svg",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                fillRule: "evenodd",
+                clipRule: "evenodd",
+                d: "M13.4499 4.8802H16.5199C20.2099 4.8802 22.0099 6.8502 21.9999 10.8902V15.7602C21.9999 19.6202 19.6199 22.0002 15.7499 22.0002H8.23988C4.38988 22.0002 1.99988 19.6202 1.99988 15.7502V8.2402C1.99988 4.1002 3.83988 2.0002 7.46988 2.0002H9.04988C9.98088 1.9902 10.8499 2.4202 11.4199 3.1502L12.2999 4.3202C12.5799 4.6702 12.9999 4.8802 13.4499 4.8802ZM7.36988 15.2902H16.6299C17.0399 15.2902 17.3699 14.9502 17.3699 14.5402C17.3699 14.1202 17.0399 13.7902 16.6299 13.7902H7.36988C6.94988 13.7902 6.61988 14.1202 6.61988 14.5402C6.61988 14.9502 6.94988 15.2902 7.36988 15.2902Z"
+              })
+            }), "Downloads"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
+            href: "#!",
+            className: "side-link mb-0",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+              width: "24",
+              height: "24",
+              viewBox: "0 0 24 24",
+              fill: "currentColor",
+              xmlns: "http://www.w3.org/2000/svg",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                fillRule: "evenodd",
+                clipRule: "evenodd",
+                d: "M2 12.015C2 6.74712 6.21 2 12.02 2C17.7 2 22 6.65699 22 11.985C22 18.1642 16.96 22 12 22C10.36 22 8.54 21.5593 7.08 20.698C6.57 20.3876 6.14 20.1572 5.59 20.3375L3.57 20.9384C3.06 21.0986 2.6 20.698 2.75 20.1572L3.42 17.9139C3.53 17.6034 3.51 17.2729 3.35 17.0125C2.49 15.4301 2 13.6975 2 12.015ZM10.7 12.015C10.7 12.7261 11.27 13.2969 11.98 13.307C12.69 13.307 13.26 12.7261 13.26 12.025C13.26 11.314 12.69 10.7431 11.98 10.7431C11.28 10.7331 10.7 11.314 10.7 12.015ZM15.31 12.025C15.31 12.7261 15.88 13.307 16.59 13.307C17.3 13.307 17.87 12.7261 17.87 12.025C17.87 11.314 17.3 10.7431 16.59 10.7431C15.88 10.7431 15.31 11.314 15.31 12.025ZM7.37 13.307C6.67 13.307 6.09 12.7261 6.09 12.025C6.09 11.314 6.66 10.7431 7.37 10.7431C8.08 10.7431 8.65 11.314 8.65 12.025C8.65 12.7261 8.08 13.2969 7.37 13.307Z"
+              })
+            }), "Messages (102)"]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+            className: "text-gray-1 side-link mb-4",
+            children: "Others"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
+            href: "pricing.html",
+            className: "side-link",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+              width: "24",
+              height: "24",
+              viewBox: "0 0 24 24",
+              fill: "currentColor",
+              xmlns: "http://www.w3.org/2000/svg",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                fillRule: "evenodd",
+                clipRule: "evenodd",
+                d: "M17.7689 8.3818H22C22 4.98459 19.9644 3 16.5156 3H7.48444C4.03556 3 2 4.98459 2 8.33847V15.6615C2 19.0154 4.03556 21 7.48444 21H16.5156C19.9644 21 22 19.0154 22 15.6615V15.3495H17.7689C15.8052 15.3495 14.2133 13.7975 14.2133 11.883C14.2133 9.96849 15.8052 8.41647 17.7689 8.41647V8.3818ZM17.7689 9.87241H21.2533C21.6657 9.87241 22 10.1983 22 10.6004V13.131C21.9952 13.5311 21.6637 13.8543 21.2533 13.8589H17.8489C16.8548 13.872 15.9855 13.2084 15.76 12.2643C15.6471 11.6783 15.8056 11.0736 16.1931 10.6122C16.5805 10.1509 17.1573 9.88007 17.7689 9.87241ZM17.92 12.533H18.2489C18.6711 12.533 19.0133 12.1993 19.0133 11.7877C19.0133 11.3761 18.6711 11.0424 18.2489 11.0424H17.92C17.7181 11.0401 17.5236 11.1166 17.38 11.255C17.2364 11.3934 17.1555 11.5821 17.1556 11.779C17.1555 12.1921 17.4964 12.5282 17.92 12.533ZM6.73778 8.3818H12.3822C12.8044 8.3818 13.1467 8.04812 13.1467 7.63649C13.1467 7.22487 12.8044 6.89119 12.3822 6.89119H6.73778C6.31903 6.89116 5.9782 7.2196 5.97333 7.62783C5.97331 8.04087 6.31415 8.37705 6.73778 8.3818Z"
+              })
+            }), "Payments"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
+            href: "#!",
+            className: "side-link",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+              width: "24",
+              height: "24",
+              viewBox: "0 0 24 24",
+              fill: "currentColor",
+              xmlns: "http://www.w3.org/2000/svg",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                fillRule: "evenodd",
+                clipRule: "evenodd",
+                d: "M7.33037 2.0004H16.6694C20.0704 2.0004 21.9904 3.9294 22.0004 7.3304V16.6704C22.0004 20.0704 20.0704 22.0004 16.6694 22.0004H7.33037C3.92937 22.0004 2.00037 20.0704 2.00037 16.6704V7.3304C2.00037 3.9294 3.92937 2.0004 7.33037 2.0004ZM12.0494 17.8604C12.4804 17.8604 12.8394 17.5404 12.8794 17.1104V6.9204C12.9194 6.6104 12.7704 6.2994 12.5004 6.1304C12.2194 5.9604 11.8794 5.9604 11.6104 6.1304C11.3394 6.2994 11.1904 6.6104 11.2194 6.9204V17.1104C11.2704 17.5404 11.6294 17.8604 12.0494 17.8604ZM16.6504 17.8604C17.0704 17.8604 17.4294 17.5404 17.4804 17.1104V13.8304C17.5094 13.5094 17.3604 13.2104 17.0894 13.0404C16.8204 12.8704 16.4804 12.8704 16.2004 13.0404C15.9294 13.2104 15.7804 13.5094 15.8204 13.8304V17.1104C15.8604 17.5404 16.2194 17.8604 16.6504 17.8604ZM8.21937 17.1104C8.17937 17.5404 7.82037 17.8604 7.38937 17.8604C6.95937 17.8604 6.59937 17.5404 6.56037 17.1104V10.2004C6.53037 9.8894 6.67937 9.5804 6.95037 9.4104C7.21937 9.2404 7.56037 9.2404 7.83037 9.4104C8.09937 9.5804 8.25037 9.8894 8.21937 10.2004V17.1104Z",
+                fill: "#B7B7B7"
+              })
+            }), "Analytics"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
+            href: "#!",
+            className: "side-link",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+              width: "24",
+              height: "24",
+              viewBox: "0 0 24 24",
+              fill: "currentColor",
+              xmlns: "http://www.w3.org/2000/svg",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                fillRule: "evenodd",
+                clipRule: "evenodd",
+                d: "M17.7689 8.3818H22C22 4.98459 19.9644 3 16.5156 3H7.48444C4.03556 3 2 4.98459 2 8.33847V15.6615C2 19.0154 4.03556 21 7.48444 21H16.5156C19.9644 21 22 19.0154 22 15.6615V15.3495H17.7689C15.8052 15.3495 14.2133 13.7975 14.2133 11.883C14.2133 9.96849 15.8052 8.41647 17.7689 8.41647V8.3818ZM17.7689 9.87241H21.2533C21.6657 9.87241 22 10.1983 22 10.6004V13.131C21.9952 13.5311 21.6637 13.8543 21.2533 13.8589H17.8489C16.8548 13.872 15.9855 13.2084 15.76 12.2643C15.6471 11.6783 15.8056 11.0736 16.1931 10.6122C16.5805 10.1509 17.1573 9.88007 17.7689 9.87241ZM17.92 12.533H18.2489C18.6711 12.533 19.0133 12.1993 19.0133 11.7877C19.0133 11.3761 18.6711 11.0424 18.2489 11.0424H17.92C17.7181 11.0401 17.5236 11.1166 17.38 11.255C17.2364 11.3934 17.1555 11.5821 17.1556 11.779C17.1555 12.1921 17.4964 12.5282 17.92 12.533ZM6.73778 8.3818H12.3822C12.8044 8.3818 13.1467 8.04812 13.1467 7.63649C13.1467 7.22487 12.8044 6.89119 12.3822 6.89119H6.73778C6.31903 6.89116 5.9782 7.2196 5.97333 7.62783C5.97331 8.04087 6.31415 8.37705 6.73778 8.3818Z"
+              })
+            }), "Your Profile"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
+            href: "sign_in.html",
+            className: "side-link mb-0",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+              width: "24",
+              height: "24",
+              viewBox: "0 0 24 24",
+              fill: "currentColor",
+              xmlns: "http://www.w3.org/2000/svg",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+                fillRule: "evenodd",
+                clipRule: "evenodd",
+                d: "M9.89535 11.23C9.45785 11.23 9.11192 11.57 9.11192 12C9.11192 12.42 9.45785 12.77 9.89535 12.77H16V17.55C16 20 13.9753 22 11.4724 22H6.51744C4.02471 22 2 20.01 2 17.56V6.45C2 3.99 4.03488 2 6.52762 2H11.4927C13.9753 2 16 3.99 16 6.44V11.23H9.89535ZM19.6302 8.5402L22.5502 11.4502C22.7002 11.6002 22.7802 11.7902 22.7802 12.0002C22.7802 12.2002 22.7002 12.4002 22.5502 12.5402L19.6302 15.4502C19.4802 15.6002 19.2802 15.6802 19.0902 15.6802C18.8902 15.6802 18.6902 15.6002 18.5402 15.4502C18.2402 15.1502 18.2402 14.6602 18.5402 14.3602L20.1402 12.7702H16.0002V11.2302H20.1402L18.5402 9.6402C18.2402 9.3402 18.2402 8.8502 18.5402 8.5502C18.8402 8.2402 19.3302 8.2402 19.6302 8.5402Z"
+              })
+            }), "Logout"]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          className: "mt-auto pr-[30px]",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+            className: "p-5 bg-black rounded-[25px]",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+              src: "/icons/ic_star-rounded.svg",
+              alt: ""
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+              className: "text-white text-lg font-semibold mt-4 mb-8",
+              children: "For Greatest"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+              className: "text-white text-sm mb-2",
+              children: "12 of 30 hari"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+              className: "rounded-full w-full h-[6px] bg-[#333333]",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+                className: "rounded-full h-full w-9/12 bg-alerange"
+              })
+            })]
+          })
+        })]
+      })]
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Layouts/Authenticated/Topbar.js":
+/*!******************************************************!*\
+  !*** ./resources/js/Layouts/Authenticated/Topbar.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Topbar)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+function Topbar() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+      _useState2 = _slicedToArray(_useState, 2),
+      dropdownOpen = _useState2[0],
+      setDropdownOpen = _useState2[1];
+
+  var dropdownTarget = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+
+  var triggerDropdown = function triggerDropdown() {
+    if (dropdownOpen) {
+      dropdownTarget.current.classList.remove('hidden');
+    } else {
+      dropdownTarget.current.classList.add('hidden');
+    }
+
+    setDropdownOpen(!dropdownOpen);
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "flex justify-between items-center cursor-pointer",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        className: "top-search",
+        placeholder: "Search movie, cast, genre"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "flex items-center gap-4",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          className: "text-black text-sm font-medium",
+          children: "Welcome, Granola Sky"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "collapsible-dropdown flex flex-col gap-2 relative",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            href: "#!",
+            className: "outline outline-2 outline-gray-2 p-[5px] rounded-full w-[60px] dropdown-button",
+            "data-target": "#dropdown-button",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+              src: "/images/avatar.png",
+              className: "rounded-full object-cover w-full",
+              alt: "",
+              onClick: triggerDropdown
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "bg-white rounded-2xl text-black font-medium flex flex-col gap-1 absolute z-[999] right-0 top-[80px] min-w-[180px] hidden overflow-hidden",
+            ref: dropdownTarget,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "#!",
+              className: "transition-all hover:bg-sky-100 p-4",
+              children: "Dashboard"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "#!",
+              className: "transition-all hover:bg-sky-100 p-4",
+              children: "Settings"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "sign_in.html",
+              className: "transition-all hover:bg-sky-100 p-4",
+              children: "Sign Out"
+            })]
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
+        jsx: "true",
+        children: "\n                .top-search {\n                    background-image: url(\"/icons/ic_search.svg\");\n                }\n            "
+      })]
+    })
   });
 }
 
@@ -5607,6 +6079,88 @@ function Dashboard(props) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Prototype/Dashboard.js":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/Prototype/Dashboard.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Dashboard)
+/* harmony export */ });
+/* harmony import */ var _Layouts_Authenticated_Index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/Authenticated/Index */ "./resources/js/Layouts/Authenticated/Index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_flickity_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-flickity-component */ "./node_modules/react-flickity-component/dist/react-flickity-component.es.js");
+/* harmony import */ var _Components_FeaturedMovie__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/FeaturedMovie */ "./resources/js/Components/FeaturedMovie.js");
+/* harmony import */ var _Components_MovieCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/MovieCard */ "./resources/js/Components/MovieCard.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+function Dashboard() {
+  var flickityOption = {
+    "cellAlign": "left",
+    "contain": true,
+    "groupCells": 1,
+    "wrapAround": false,
+    "pageDots": false,
+    "prevNextButtons": false,
+    "draggable": ">1"
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_Layouts_Authenticated_Index__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("link", {
+        rel: "stylesheet",
+        href: "https://unpkg.com/flickity@2/dist/flickity.min.css"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("title", {
+        children: "Dashboard"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "font-semibold text-[22px] text-black mb-4",
+        children: "Featured Movies"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_flickity_component__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        className: "gap-[30px]",
+        options: flickityOption,
+        children: [1, 2, 3, 4].map(function (i) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_FeaturedMovie__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            slug: "the-batman-in-love",
+            name: "The Batman in Love ".concat(i),
+            category: "Comedy",
+            thumbnail: "https:picsum.photos/id/1/300/300",
+            rating: i + 1
+          }, i);
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "mt-[50px]",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "font-semibold text-[22px] text-black mb-4",
+        children: "Browse"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_flickity_component__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        className: "gap-[30px]",
+        options: flickityOption,
+        children: [1, 2, 3, 4, 5, 6].map(function (i) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_MovieCard__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            slug: "the-batman-in-love",
+            name: "The Batman in Love ".concat(i),
+            category: "Comedy",
+            thumbnail: "https:picsum.photos/id/1/300/300"
+          }, i);
+        })
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Prototype/Login.js":
 /*!***********************************************!*\
   !*** ./resources/js/Pages/Prototype/Login.js ***!
@@ -5683,12 +6237,15 @@ function Login() {
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               className: "grid space-y-[14px] mt-[30px]",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-                type: "button",
-                variant: "primary",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                  className: "text-base font-semibold",
-                  children: "Start Watching"
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
+                href: route('prototype.dashboard'),
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                  type: "button",
+                  variant: "primary",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                    className: "text-basefont-semibold",
+                    children: "Start Watching"
+                  })
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
                 href: route('prototype.register'),
@@ -5799,10 +6356,13 @@ function Register() {
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               className: "grid space-y-[14px] mt-[30px]",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                  className: "text-base font-semibold",
-                  children: "Sign Up"
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
+                href: route("prototype.dashboard"),
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                    className: "text-base font-semibold",
+                    children: "Sign Up"
+                  })
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
                 href: route("prototype.login"),
@@ -55331,6 +55891,29 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-flickity-component/dist/react-flickity-component.es.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/react-flickity-component/dist/react-flickity-component.es.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _index_48195875_mjs__WEBPACK_IMPORTED_MODULE_2__.F)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _index_48195875_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index-48195875.mjs */ "./node_modules/react-flickity-component/dist/index-48195875.mjs");
+
+
+
+
+//# sourceMappingURL=react-flickity-component.es.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/react-is/cjs/react-is.development.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-is/cjs/react-is.development.js ***!
@@ -60350,6 +60933,8 @@ var map = {
 	"./Auth/VerifyEmail.js": "./resources/js/Pages/Auth/VerifyEmail.js",
 	"./Dashboard": "./resources/js/Pages/Dashboard.js",
 	"./Dashboard.js": "./resources/js/Pages/Dashboard.js",
+	"./Prototype/Dashboard": "./resources/js/Pages/Prototype/Dashboard.js",
+	"./Prototype/Dashboard.js": "./resources/js/Pages/Prototype/Dashboard.js",
 	"./Prototype/Login": "./resources/js/Pages/Prototype/Login.js",
 	"./Prototype/Login.js": "./resources/js/Pages/Prototype/Login.js",
 	"./Prototype/Register": "./resources/js/Pages/Prototype/Register.js",
@@ -60713,6 +61298,933 @@ var b=(n=>(n[n.None=0]="None",n[n.RenderStrategy=1]="RenderStrategy",n[n.Static=
 
 /***/ }),
 
+/***/ "./node_modules/react-flickity-component/dist/index-48195875.mjs":
+/*!***********************************************************************!*\
+  !*** ./node_modules/react-flickity-component/dist/index-48195875.mjs ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "F": () => (/* binding */ Oe),
+/* harmony export */   "r": () => (/* binding */ we)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+
+var xe = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {}, Se = { exports: {} }, ee = { exports: {} }, le;
+function we() {
+  return le || (le = 1, function(s) {
+    (function(p, u) {
+      s.exports ? s.exports = u() : p.EvEmitter = u();
+    })(typeof window < "u" ? window : xe, function() {
+      function p() {
+      }
+      var u = p.prototype;
+      return u.on = function(a, f) {
+        if (!(!a || !f)) {
+          var o = this._events = this._events || {}, y = o[a] = o[a] || [];
+          return y.indexOf(f) == -1 && y.push(f), this;
+        }
+      }, u.once = function(a, f) {
+        if (!(!a || !f)) {
+          this.on(a, f);
+          var o = this._onceEvents = this._onceEvents || {}, y = o[a] = o[a] || {};
+          return y[f] = !0, this;
+        }
+      }, u.off = function(a, f) {
+        var o = this._events && this._events[a];
+        if (!(!o || !o.length)) {
+          var y = o.indexOf(f);
+          return y != -1 && o.splice(y, 1), this;
+        }
+      }, u.emitEvent = function(a, f) {
+        var o = this._events && this._events[a];
+        if (!(!o || !o.length)) {
+          o = o.slice(0), f = f || [];
+          for (var y = this._onceEvents && this._onceEvents[a], h = 0; h < o.length; h++) {
+            var S = o[h], l = y && y[S];
+            l && (this.off(a, S), delete y[S]), S.apply(this, f);
+          }
+          return this;
+        }
+      }, u.allOff = function() {
+        delete this._events, delete this._onceEvents;
+      }, p;
+    });
+  }(ee)), ee.exports;
+}
+(function(s) {
+  (function(p, u) {
+    s.exports ? s.exports = u(
+      p,
+      we()
+    ) : p.imagesLoaded = u(
+      p,
+      p.EvEmitter
+    );
+  })(
+    typeof window < "u" ? window : xe,
+    function(u, a) {
+      var f = u.jQuery, o = u.console;
+      function y(t, c) {
+        for (var d in c)
+          t[d] = c[d];
+        return t;
+      }
+      var h = Array.prototype.slice;
+      function S(t) {
+        if (Array.isArray(t))
+          return t;
+        var c = typeof t == "object" && typeof t.length == "number";
+        return c ? h.call(t) : [t];
+      }
+      function l(t, c, d) {
+        if (!(this instanceof l))
+          return new l(t, c, d);
+        var g = t;
+        if (typeof t == "string" && (g = document.querySelectorAll(t)), !g) {
+          o.error("Bad element for imagesLoaded " + (g || t));
+          return;
+        }
+        this.elements = S(g), this.options = y({}, this.options), typeof c == "function" ? d = c : y(this.options, c), d && this.on("always", d), this.getImages(), f && (this.jqDeferred = new f.Deferred()), setTimeout(this.check.bind(this));
+      }
+      l.prototype = Object.create(a.prototype), l.prototype.options = {}, l.prototype.getImages = function() {
+        this.images = [], this.elements.forEach(this.addElementImages, this);
+      }, l.prototype.addElementImages = function(t) {
+        t.nodeName == "IMG" && this.addImage(t), this.options.background === !0 && this.addElementBackgroundImages(t);
+        var c = t.nodeType;
+        if (!(!c || !R[c])) {
+          for (var d = t.querySelectorAll("img"), g = 0; g < d.length; g++) {
+            var A = d[g];
+            this.addImage(A);
+          }
+          if (typeof this.options.background == "string") {
+            var Y = t.querySelectorAll(this.options.background);
+            for (g = 0; g < Y.length; g++) {
+              var j = Y[g];
+              this.addElementBackgroundImages(j);
+            }
+          }
+        }
+      };
+      var R = {
+        1: !0,
+        9: !0,
+        11: !0
+      };
+      l.prototype.addElementBackgroundImages = function(t) {
+        var c = getComputedStyle(t);
+        if (!!c)
+          for (var d = /url\((['"])?(.*?)\1\)/gi, g = d.exec(c.backgroundImage); g !== null; ) {
+            var A = g && g[2];
+            A && this.addBackground(A, t), g = d.exec(c.backgroundImage);
+          }
+      }, l.prototype.addImage = function(t) {
+        var c = new m(t);
+        this.images.push(c);
+      }, l.prototype.addBackground = function(t, c) {
+        var d = new k(t, c);
+        this.images.push(d);
+      }, l.prototype.check = function() {
+        var t = this;
+        if (this.progressedCount = 0, this.hasAnyBroken = !1, !this.images.length) {
+          this.complete();
+          return;
+        }
+        function c(d, g, A) {
+          setTimeout(function() {
+            t.progress(d, g, A);
+          });
+        }
+        this.images.forEach(function(d) {
+          d.once("progress", c), d.check();
+        });
+      }, l.prototype.progress = function(t, c, d) {
+        this.progressedCount++, this.hasAnyBroken = this.hasAnyBroken || !t.isLoaded, this.emitEvent("progress", [this, t, c]), this.jqDeferred && this.jqDeferred.notify && this.jqDeferred.notify(this, t), this.progressedCount == this.images.length && this.complete(), this.options.debug && o && o.log("progress: " + d, t, c);
+      }, l.prototype.complete = function() {
+        var t = this.hasAnyBroken ? "fail" : "done";
+        if (this.isComplete = !0, this.emitEvent(t, [this]), this.emitEvent("always", [this]), this.jqDeferred) {
+          var c = this.hasAnyBroken ? "reject" : "resolve";
+          this.jqDeferred[c](this);
+        }
+      };
+      function m(t) {
+        this.img = t;
+      }
+      m.prototype = Object.create(a.prototype), m.prototype.check = function() {
+        var t = this.getIsImageComplete();
+        if (t) {
+          this.confirm(this.img.naturalWidth !== 0, "naturalWidth");
+          return;
+        }
+        this.proxyImage = new Image(), this.proxyImage.addEventListener("load", this), this.proxyImage.addEventListener("error", this), this.img.addEventListener("load", this), this.img.addEventListener("error", this), this.proxyImage.src = this.img.src;
+      }, m.prototype.getIsImageComplete = function() {
+        return this.img.complete && this.img.naturalWidth;
+      }, m.prototype.confirm = function(t, c) {
+        this.isLoaded = t, this.emitEvent("progress", [this, this.img, c]);
+      }, m.prototype.handleEvent = function(t) {
+        var c = "on" + t.type;
+        this[c] && this[c](t);
+      }, m.prototype.onload = function() {
+        this.confirm(!0, "onload"), this.unbindEvents();
+      }, m.prototype.onerror = function() {
+        this.confirm(!1, "onerror"), this.unbindEvents();
+      }, m.prototype.unbindEvents = function() {
+        this.proxyImage.removeEventListener("load", this), this.proxyImage.removeEventListener("error", this), this.img.removeEventListener("load", this), this.img.removeEventListener("error", this);
+      };
+      function k(t, c) {
+        this.url = t, this.element = c, this.img = new Image();
+      }
+      return k.prototype = Object.create(m.prototype), k.prototype.check = function() {
+        this.img.addEventListener("load", this), this.img.addEventListener("error", this), this.img.src = this.url;
+        var t = this.getIsImageComplete();
+        t && (this.confirm(this.img.naturalWidth !== 0, "naturalWidth"), this.unbindEvents());
+      }, k.prototype.unbindEvents = function() {
+        this.img.removeEventListener("load", this), this.img.removeEventListener("error", this);
+      }, k.prototype.confirm = function(t, c) {
+        this.isLoaded = t, this.emitEvent("progress", [this, this.element, c]);
+      }, l.makeJQueryPlugin = function(t) {
+        t = t || u.jQuery, t && (f = t, f.fn.imagesLoaded = function(c, d) {
+          var g = new l(this, c, d);
+          return g.jqDeferred.promise(f(this));
+        });
+      }, l.makeJQueryPlugin(), l;
+    }
+  );
+})(Se);
+const de = Se.exports;
+var D = { exports: {} }, te = { exports: {} }, C = {};
+var pe;
+function Ie() {
+  if (pe)
+    return C;
+  pe = 1;
+  var s = typeof Symbol == "function" && Symbol.for, p = s ? Symbol.for("react.element") : 60103, u = s ? Symbol.for("react.portal") : 60106, a = s ? Symbol.for("react.fragment") : 60107, f = s ? Symbol.for("react.strict_mode") : 60108, o = s ? Symbol.for("react.profiler") : 60114, y = s ? Symbol.for("react.provider") : 60109, h = s ? Symbol.for("react.context") : 60110, S = s ? Symbol.for("react.async_mode") : 60111, l = s ? Symbol.for("react.concurrent_mode") : 60111, R = s ? Symbol.for("react.forward_ref") : 60112, m = s ? Symbol.for("react.suspense") : 60113, k = s ? Symbol.for("react.suspense_list") : 60120, t = s ? Symbol.for("react.memo") : 60115, c = s ? Symbol.for("react.lazy") : 60116, d = s ? Symbol.for("react.block") : 60121, g = s ? Symbol.for("react.fundamental") : 60117, A = s ? Symbol.for("react.responder") : 60118, Y = s ? Symbol.for("react.scope") : 60119;
+  function j(n) {
+    if (typeof n == "object" && n !== null) {
+      var W = n.$$typeof;
+      switch (W) {
+        case p:
+          switch (n = n.type, n) {
+            case S:
+            case l:
+            case a:
+            case o:
+            case f:
+            case m:
+              return n;
+            default:
+              switch (n = n && n.$$typeof, n) {
+                case h:
+                case R:
+                case c:
+                case t:
+                case y:
+                  return n;
+                default:
+                  return W;
+              }
+          }
+        case u:
+          return W;
+      }
+    }
+  }
+  function L(n) {
+    return j(n) === l;
+  }
+  return C.AsyncMode = S, C.ConcurrentMode = l, C.ContextConsumer = h, C.ContextProvider = y, C.Element = p, C.ForwardRef = R, C.Fragment = a, C.Lazy = c, C.Memo = t, C.Portal = u, C.Profiler = o, C.StrictMode = f, C.Suspense = m, C.isAsyncMode = function(n) {
+    return L(n) || j(n) === S;
+  }, C.isConcurrentMode = L, C.isContextConsumer = function(n) {
+    return j(n) === h;
+  }, C.isContextProvider = function(n) {
+    return j(n) === y;
+  }, C.isElement = function(n) {
+    return typeof n == "object" && n !== null && n.$$typeof === p;
+  }, C.isForwardRef = function(n) {
+    return j(n) === R;
+  }, C.isFragment = function(n) {
+    return j(n) === a;
+  }, C.isLazy = function(n) {
+    return j(n) === c;
+  }, C.isMemo = function(n) {
+    return j(n) === t;
+  }, C.isPortal = function(n) {
+    return j(n) === u;
+  }, C.isProfiler = function(n) {
+    return j(n) === o;
+  }, C.isStrictMode = function(n) {
+    return j(n) === f;
+  }, C.isSuspense = function(n) {
+    return j(n) === m;
+  }, C.isValidElementType = function(n) {
+    return typeof n == "string" || typeof n == "function" || n === a || n === l || n === o || n === f || n === m || n === k || typeof n == "object" && n !== null && (n.$$typeof === c || n.$$typeof === t || n.$$typeof === y || n.$$typeof === h || n.$$typeof === R || n.$$typeof === g || n.$$typeof === A || n.$$typeof === Y || n.$$typeof === d);
+  }, C.typeOf = j, C;
+}
+var w = {};
+var ye;
+function ke() {
+  return ye || (ye = 1,  true && function() {
+    var s = typeof Symbol == "function" && Symbol.for, p = s ? Symbol.for("react.element") : 60103, u = s ? Symbol.for("react.portal") : 60106, a = s ? Symbol.for("react.fragment") : 60107, f = s ? Symbol.for("react.strict_mode") : 60108, o = s ? Symbol.for("react.profiler") : 60114, y = s ? Symbol.for("react.provider") : 60109, h = s ? Symbol.for("react.context") : 60110, S = s ? Symbol.for("react.async_mode") : 60111, l = s ? Symbol.for("react.concurrent_mode") : 60111, R = s ? Symbol.for("react.forward_ref") : 60112, m = s ? Symbol.for("react.suspense") : 60113, k = s ? Symbol.for("react.suspense_list") : 60120, t = s ? Symbol.for("react.memo") : 60115, c = s ? Symbol.for("react.lazy") : 60116, d = s ? Symbol.for("react.block") : 60121, g = s ? Symbol.for("react.fundamental") : 60117, A = s ? Symbol.for("react.responder") : 60118, Y = s ? Symbol.for("react.scope") : 60119;
+    function j(r) {
+      return typeof r == "string" || typeof r == "function" || r === a || r === l || r === o || r === f || r === m || r === k || typeof r == "object" && r !== null && (r.$$typeof === c || r.$$typeof === t || r.$$typeof === y || r.$$typeof === h || r.$$typeof === R || r.$$typeof === g || r.$$typeof === A || r.$$typeof === Y || r.$$typeof === d);
+    }
+    function L(r) {
+      if (typeof r == "object" && r !== null) {
+        var q = r.$$typeof;
+        switch (q) {
+          case p:
+            var J = r.type;
+            switch (J) {
+              case S:
+              case l:
+              case a:
+              case o:
+              case f:
+              case m:
+                return J;
+              default:
+                var fe = J && J.$$typeof;
+                switch (fe) {
+                  case h:
+                  case R:
+                  case c:
+                  case t:
+                  case y:
+                    return fe;
+                  default:
+                    return q;
+                }
+            }
+          case u:
+            return q;
+        }
+      }
+    }
+    var n = S, W = l, N = h, V = y, G = p, H = R, B = a, X = c, K = t, U = u, Q = o, M = f, F = m, z = !1;
+    function Z(r) {
+      return z || (z = !0, console.warn("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.")), e(r) || L(r) === S;
+    }
+    function e(r) {
+      return L(r) === l;
+    }
+    function i(r) {
+      return L(r) === h;
+    }
+    function x(r) {
+      return L(r) === y;
+    }
+    function b(r) {
+      return typeof r == "object" && r !== null && r.$$typeof === p;
+    }
+    function v(r) {
+      return L(r) === R;
+    }
+    function _(r) {
+      return L(r) === a;
+    }
+    function E(r) {
+      return L(r) === c;
+    }
+    function T(r) {
+      return L(r) === t;
+    }
+    function O(r) {
+      return L(r) === u;
+    }
+    function I(r) {
+      return L(r) === o;
+    }
+    function P(r) {
+      return L(r) === f;
+    }
+    function $(r) {
+      return L(r) === m;
+    }
+    w.AsyncMode = n, w.ConcurrentMode = W, w.ContextConsumer = N, w.ContextProvider = V, w.Element = G, w.ForwardRef = H, w.Fragment = B, w.Lazy = X, w.Memo = K, w.Portal = U, w.Profiler = Q, w.StrictMode = M, w.Suspense = F, w.isAsyncMode = Z, w.isConcurrentMode = e, w.isContextConsumer = i, w.isContextProvider = x, w.isElement = b, w.isForwardRef = v, w.isFragment = _, w.isLazy = E, w.isMemo = T, w.isPortal = O, w.isProfiler = I, w.isStrictMode = P, w.isSuspense = $, w.isValidElementType = j, w.typeOf = L;
+  }()), w;
+}
+var he;
+function Re() {
+  return he || (he = 1, function(s) {
+     false ? 0 : s.exports = ke();
+  }(te)), te.exports;
+}
+var re, ve;
+function Ae() {
+  if (ve)
+    return re;
+  ve = 1;
+  var s = Object.getOwnPropertySymbols, p = Object.prototype.hasOwnProperty, u = Object.prototype.propertyIsEnumerable;
+  function a(o) {
+    if (o == null)
+      throw new TypeError("Object.assign cannot be called with null or undefined");
+    return Object(o);
+  }
+  function f() {
+    try {
+      if (!Object.assign)
+        return !1;
+      var o = new String("abc");
+      if (o[5] = "de", Object.getOwnPropertyNames(o)[0] === "5")
+        return !1;
+      for (var y = {}, h = 0; h < 10; h++)
+        y["_" + String.fromCharCode(h)] = h;
+      var S = Object.getOwnPropertyNames(y).map(function(R) {
+        return y[R];
+      });
+      if (S.join("") !== "0123456789")
+        return !1;
+      var l = {};
+      return "abcdefghijklmnopqrst".split("").forEach(function(R) {
+        l[R] = R;
+      }), Object.keys(Object.assign({}, l)).join("") === "abcdefghijklmnopqrst";
+    } catch {
+      return !1;
+    }
+  }
+  return re = f() ? Object.assign : function(o, y) {
+    for (var h, S = a(o), l, R = 1; R < arguments.length; R++) {
+      h = Object(arguments[R]);
+      for (var m in h)
+        p.call(h, m) && (S[m] = h[m]);
+      if (s) {
+        l = s(h);
+        for (var k = 0; k < l.length; k++)
+          u.call(h, l[k]) && (S[l[k]] = h[l[k]]);
+      }
+    }
+    return S;
+  }, re;
+}
+var ne, me;
+function ce() {
+  if (me)
+    return ne;
+  me = 1;
+  var s = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
+  return ne = s, ne;
+}
+var ie, ge;
+function _e() {
+  return ge || (ge = 1, ie = Function.call.bind(Object.prototype.hasOwnProperty)), ie;
+}
+var oe, Ee;
+function je() {
+  if (Ee)
+    return oe;
+  Ee = 1;
+  var s = function() {
+  };
+  if (true) {
+    var p = ce(), u = {}, a = _e();
+    s = function(o) {
+      var y = "Warning: " + o;
+      typeof console < "u" && console.error(y);
+      try {
+        throw new Error(y);
+      } catch {
+      }
+    };
+  }
+  function f(o, y, h, S, l) {
+    if (true) {
+      for (var R in o)
+        if (a(o, R)) {
+          var m;
+          try {
+            if (typeof o[R] != "function") {
+              var k = Error(
+                (S || "React class") + ": " + h + " type `" + R + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof o[R] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`."
+              );
+              throw k.name = "Invariant Violation", k;
+            }
+            m = o[R](y, R, S, h, null, p);
+          } catch (c) {
+            m = c;
+          }
+          if (m && !(m instanceof Error) && s(
+            (S || "React class") + ": type specification of " + h + " `" + R + "` is invalid; the type checker function must return `null` or an `Error` but returned a " + typeof m + ". You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument)."
+          ), m instanceof Error && !(m.message in u)) {
+            u[m.message] = !0;
+            var t = l ? l() : "";
+            s(
+              "Failed " + h + " type: " + m.message + (t ?? "")
+            );
+          }
+        }
+    }
+  }
+  return f.resetWarningCache = function() {
+     true && (u = {});
+  }, oe = f, oe;
+}
+var se, be;
+function Le() {
+  if (be)
+    return se;
+  be = 1;
+  var s = Re(), p = Ae(), u = ce(), a = _e(), f = je(), o = function() {
+  };
+   true && (o = function(h) {
+    var S = "Warning: " + h;
+    typeof console < "u" && console.error(S);
+    try {
+      throw new Error(S);
+    } catch {
+    }
+  });
+  function y() {
+    return null;
+  }
+  return se = function(h, S) {
+    var l = typeof Symbol == "function" && Symbol.iterator, R = "@@iterator";
+    function m(e) {
+      var i = e && (l && e[l] || e[R]);
+      if (typeof i == "function")
+        return i;
+    }
+    var k = "<<anonymous>>", t = {
+      array: A("array"),
+      bigint: A("bigint"),
+      bool: A("boolean"),
+      func: A("function"),
+      number: A("number"),
+      object: A("object"),
+      string: A("string"),
+      symbol: A("symbol"),
+      any: Y(),
+      arrayOf: j,
+      element: L(),
+      elementType: n(),
+      instanceOf: W,
+      node: H(),
+      objectOf: V,
+      oneOf: N,
+      oneOfType: G,
+      shape: X,
+      exact: K
+    };
+    function c(e, i) {
+      return e === i ? e !== 0 || 1 / e === 1 / i : e !== e && i !== i;
+    }
+    function d(e, i) {
+      this.message = e, this.data = i && typeof i == "object" ? i : {}, this.stack = "";
+    }
+    d.prototype = Error.prototype;
+    function g(e) {
+      if (true)
+        var i = {}, x = 0;
+      function b(_, E, T, O, I, P, $) {
+        if (O = O || k, P = P || T, $ !== u) {
+          if (S) {
+            var r = new Error(
+              "Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types"
+            );
+            throw r.name = "Invariant Violation", r;
+          } else if ( true && typeof console < "u") {
+            var q = O + ":" + T;
+            !i[q] && x < 3 && (o(
+              "You are manually calling a React.PropTypes validation function for the `" + P + "` prop on `" + O + "`. This is deprecated and will throw in the standalone `prop-types` package. You may be seeing this warning due to a third-party PropTypes library. See https://fb.me/react-warning-dont-call-proptypes for details."
+            ), i[q] = !0, x++);
+          }
+        }
+        return E[T] == null ? _ ? E[T] === null ? new d("The " + I + " `" + P + "` is marked as required " + ("in `" + O + "`, but its value is `null`.")) : new d("The " + I + " `" + P + "` is marked as required in " + ("`" + O + "`, but its value is `undefined`.")) : null : e(E, T, O, I, P);
+      }
+      var v = b.bind(null, !1);
+      return v.isRequired = b.bind(null, !0), v;
+    }
+    function A(e) {
+      function i(x, b, v, _, E, T) {
+        var O = x[b], I = M(O);
+        if (I !== e) {
+          var P = F(O);
+          return new d(
+            "Invalid " + _ + " `" + E + "` of type " + ("`" + P + "` supplied to `" + v + "`, expected ") + ("`" + e + "`."),
+            { expectedType: e }
+          );
+        }
+        return null;
+      }
+      return g(i);
+    }
+    function Y() {
+      return g(y);
+    }
+    function j(e) {
+      function i(x, b, v, _, E) {
+        if (typeof e != "function")
+          return new d("Property `" + E + "` of component `" + v + "` has invalid PropType notation inside arrayOf.");
+        var T = x[b];
+        if (!Array.isArray(T)) {
+          var O = M(T);
+          return new d("Invalid " + _ + " `" + E + "` of type " + ("`" + O + "` supplied to `" + v + "`, expected an array."));
+        }
+        for (var I = 0; I < T.length; I++) {
+          var P = e(T, I, v, _, E + "[" + I + "]", u);
+          if (P instanceof Error)
+            return P;
+        }
+        return null;
+      }
+      return g(i);
+    }
+    function L() {
+      function e(i, x, b, v, _) {
+        var E = i[x];
+        if (!h(E)) {
+          var T = M(E);
+          return new d("Invalid " + v + " `" + _ + "` of type " + ("`" + T + "` supplied to `" + b + "`, expected a single ReactElement."));
+        }
+        return null;
+      }
+      return g(e);
+    }
+    function n() {
+      function e(i, x, b, v, _) {
+        var E = i[x];
+        if (!s.isValidElementType(E)) {
+          var T = M(E);
+          return new d("Invalid " + v + " `" + _ + "` of type " + ("`" + T + "` supplied to `" + b + "`, expected a single ReactElement type."));
+        }
+        return null;
+      }
+      return g(e);
+    }
+    function W(e) {
+      function i(x, b, v, _, E) {
+        if (!(x[b] instanceof e)) {
+          var T = e.name || k, O = Z(x[b]);
+          return new d("Invalid " + _ + " `" + E + "` of type " + ("`" + O + "` supplied to `" + v + "`, expected ") + ("instance of `" + T + "`."));
+        }
+        return null;
+      }
+      return g(i);
+    }
+    function N(e) {
+      if (!Array.isArray(e))
+        return  true && (arguments.length > 1 ? o(
+          "Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z])."
+        ) : o("Invalid argument supplied to oneOf, expected an array.")), y;
+      function i(x, b, v, _, E) {
+        for (var T = x[b], O = 0; O < e.length; O++)
+          if (c(T, e[O]))
+            return null;
+        var I = JSON.stringify(e, function($, r) {
+          var q = F(r);
+          return q === "symbol" ? String(r) : r;
+        });
+        return new d("Invalid " + _ + " `" + E + "` of value `" + String(T) + "` " + ("supplied to `" + v + "`, expected one of " + I + "."));
+      }
+      return g(i);
+    }
+    function V(e) {
+      function i(x, b, v, _, E) {
+        if (typeof e != "function")
+          return new d("Property `" + E + "` of component `" + v + "` has invalid PropType notation inside objectOf.");
+        var T = x[b], O = M(T);
+        if (O !== "object")
+          return new d("Invalid " + _ + " `" + E + "` of type " + ("`" + O + "` supplied to `" + v + "`, expected an object."));
+        for (var I in T)
+          if (a(T, I)) {
+            var P = e(T, I, v, _, E + "." + I, u);
+            if (P instanceof Error)
+              return P;
+          }
+        return null;
+      }
+      return g(i);
+    }
+    function G(e) {
+      if (!Array.isArray(e))
+        return  true && o("Invalid argument supplied to oneOfType, expected an instance of array."), y;
+      for (var i = 0; i < e.length; i++) {
+        var x = e[i];
+        if (typeof x != "function")
+          return o(
+            "Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + z(x) + " at index " + i + "."
+          ), y;
+      }
+      function b(v, _, E, T, O) {
+        for (var I = [], P = 0; P < e.length; P++) {
+          var $ = e[P], r = $(v, _, E, T, O, u);
+          if (r == null)
+            return null;
+          r.data && a(r.data, "expectedType") && I.push(r.data.expectedType);
+        }
+        var q = I.length > 0 ? ", expected one of type [" + I.join(", ") + "]" : "";
+        return new d("Invalid " + T + " `" + O + "` supplied to " + ("`" + E + "`" + q + "."));
+      }
+      return g(b);
+    }
+    function H() {
+      function e(i, x, b, v, _) {
+        return U(i[x]) ? null : new d("Invalid " + v + " `" + _ + "` supplied to " + ("`" + b + "`, expected a ReactNode."));
+      }
+      return g(e);
+    }
+    function B(e, i, x, b, v) {
+      return new d(
+        (e || "React class") + ": " + i + " type `" + x + "." + b + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + v + "`."
+      );
+    }
+    function X(e) {
+      function i(x, b, v, _, E) {
+        var T = x[b], O = M(T);
+        if (O !== "object")
+          return new d("Invalid " + _ + " `" + E + "` of type `" + O + "` " + ("supplied to `" + v + "`, expected `object`."));
+        for (var I in e) {
+          var P = e[I];
+          if (typeof P != "function")
+            return B(v, _, E, I, F(P));
+          var $ = P(T, I, v, _, E + "." + I, u);
+          if ($)
+            return $;
+        }
+        return null;
+      }
+      return g(i);
+    }
+    function K(e) {
+      function i(x, b, v, _, E) {
+        var T = x[b], O = M(T);
+        if (O !== "object")
+          return new d("Invalid " + _ + " `" + E + "` of type `" + O + "` " + ("supplied to `" + v + "`, expected `object`."));
+        var I = p({}, x[b], e);
+        for (var P in I) {
+          var $ = e[P];
+          if (a(e, P) && typeof $ != "function")
+            return B(v, _, E, P, F($));
+          if (!$)
+            return new d(
+              "Invalid " + _ + " `" + E + "` key `" + P + "` supplied to `" + v + "`.\nBad object: " + JSON.stringify(x[b], null, "  ") + `
+Valid keys: ` + JSON.stringify(Object.keys(e), null, "  ")
+            );
+          var r = $(T, P, v, _, E + "." + P, u);
+          if (r)
+            return r;
+        }
+        return null;
+      }
+      return g(i);
+    }
+    function U(e) {
+      switch (typeof e) {
+        case "number":
+        case "string":
+        case "undefined":
+          return !0;
+        case "boolean":
+          return !e;
+        case "object":
+          if (Array.isArray(e))
+            return e.every(U);
+          if (e === null || h(e))
+            return !0;
+          var i = m(e);
+          if (i) {
+            var x = i.call(e), b;
+            if (i !== e.entries) {
+              for (; !(b = x.next()).done; )
+                if (!U(b.value))
+                  return !1;
+            } else
+              for (; !(b = x.next()).done; ) {
+                var v = b.value;
+                if (v && !U(v[1]))
+                  return !1;
+              }
+          } else
+            return !1;
+          return !0;
+        default:
+          return !1;
+      }
+    }
+    function Q(e, i) {
+      return e === "symbol" ? !0 : i ? i["@@toStringTag"] === "Symbol" || typeof Symbol == "function" && i instanceof Symbol : !1;
+    }
+    function M(e) {
+      var i = typeof e;
+      return Array.isArray(e) ? "array" : e instanceof RegExp ? "object" : Q(i, e) ? "symbol" : i;
+    }
+    function F(e) {
+      if (typeof e > "u" || e === null)
+        return "" + e;
+      var i = M(e);
+      if (i === "object") {
+        if (e instanceof Date)
+          return "date";
+        if (e instanceof RegExp)
+          return "regexp";
+      }
+      return i;
+    }
+    function z(e) {
+      var i = F(e);
+      switch (i) {
+        case "array":
+        case "object":
+          return "an " + i;
+        case "boolean":
+        case "date":
+        case "regexp":
+          return "a " + i;
+        default:
+          return i;
+      }
+    }
+    function Z(e) {
+      return !e.constructor || !e.constructor.name ? k : e.constructor.name;
+    }
+    return t.checkPropTypes = f, t.resetWarningCache = f.resetWarningCache, t.PropTypes = t, t;
+  }, se;
+}
+var ae, Te;
+function $e() {
+  if (Te)
+    return ae;
+  Te = 1;
+  var s = ce();
+  function p() {
+  }
+  function u() {
+  }
+  return u.resetWarningCache = p, ae = function() {
+    function a(y, h, S, l, R, m) {
+      if (m !== s) {
+        var k = new Error(
+          "Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types"
+        );
+        throw k.name = "Invariant Violation", k;
+      }
+    }
+    a.isRequired = a;
+    function f() {
+      return a;
+    }
+    var o = {
+      array: a,
+      bigint: a,
+      bool: a,
+      func: a,
+      number: a,
+      object: a,
+      string: a,
+      symbol: a,
+      any: a,
+      arrayOf: f,
+      element: a,
+      elementType: a,
+      instanceOf: f,
+      node: a,
+      objectOf: f,
+      oneOf: f,
+      oneOfType: f,
+      shape: f,
+      exact: f,
+      checkPropTypes: u,
+      resetWarningCache: p
+    };
+    return o.PropTypes = o, o;
+  }, ae;
+}
+if (true) {
+  var Me = Re(), qe = !0;
+  D.exports = Le()(Me.isElement, qe);
+} else
+  {}
+const De = !!(typeof window < "u" && window.document && window.document.createElement);
+class Oe extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+  constructor(p) {
+    super(p), this.state = {
+      flickityReady: !1,
+      flickityCreated: !1,
+      cellCount: 0
+    }, this.carousel = null, this.flkty = null;
+  }
+  static getDerivedStateFromProps(p, u) {
+    const a = react__WEBPACK_IMPORTED_MODULE_0__.Children.count(p.children);
+    return a !== u.cellCount ? { flickityReady: !1, cellCount: a } : null;
+  }
+  componentDidUpdate(p, u) {
+    const {
+      children: a,
+      options: { draggable: f, initialIndex: o },
+      reloadOnUpdate: y,
+      disableImagesLoaded: h
+    } = this.props, { flickityReady: S } = this.state;
+    if (y || !u.flickityReady && S) {
+      if (!this.flkty)
+        return;
+      const l = this.flkty.isActive;
+      this.flkty.deactivate(), this.flkty.selectedIndex = o || 0, this.flkty.options.draggable = f === void 0 ? a ? a.length > 1 : !1 : f, l && this.flkty.activate(), !h && this.carousel && de(this.carousel, () => {
+        this.flkty.reloadCells();
+      });
+    } else
+      this.flkty.reloadCells();
+  }
+  async componentDidMount() {
+    if (!De)
+      return null;
+    const p = (await __webpack_require__.e(/*! import() */ "node_modules_react-flickity-component_dist_index-24f78f07_mjs").then(__webpack_require__.bind(__webpack_require__, /*! ./index-24f78f07.mjs */ "./node_modules/react-flickity-component/dist/index-24f78f07.mjs")).then((f) => f.i)).default, { flickityRef: u, options: a } = this.props;
+    this.flkty = new p(this.carousel, a), u && u(this.flkty), this.props.static ? this.setReady() : this.setState({ flickityCreated: !0 });
+  }
+  setReady() {
+    if (this.state.flickityReady)
+      return;
+    const p = () => this.setState({ flickityReady: !0 });
+    this.props.disableImagesLoaded ? p() : de(this.carousel, p);
+  }
+  renderPortal() {
+    if (!this.carousel)
+      return null;
+    const p = this.carousel.querySelector(".flickity-slider");
+    if (p) {
+      const u = (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal)(this.props.children, p);
+      return setTimeout(() => this.setReady(), 0), u;
+    }
+  }
+  render() {
+    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(
+      this.props.elementType,
+      {
+        className: this.props.className,
+        ref: (p) => {
+          this.carousel = p;
+        }
+      },
+      this.props.static ? this.props.children : this.renderPortal()
+    );
+  }
+}
+Oe.propTypes = {
+  children: D.exports.array,
+  className: D.exports.string,
+  disableImagesLoaded: D.exports.bool,
+  elementType: D.exports.string,
+  flickityRef: D.exports.func,
+  options: D.exports.object,
+  reloadOnUpdate: D.exports.bool,
+  static: D.exports.bool
+};
+Oe.defaultProps = {
+  className: "",
+  disableImagesLoaded: !1,
+  elementType: "div",
+  options: {},
+  reloadOnUpdate: !1,
+  static: !1
+};
+
+//# sourceMappingURL=index-48195875.mjs.map
+
+
+/***/ }),
+
 /***/ "./node_modules/@inertiajs/inertia/node_modules/axios/package.json":
 /*!*************************************************************************!*\
   !*** ./node_modules/@inertiajs/inertia/node_modules/axios/package.json ***!
@@ -60813,6 +62325,39 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/ensure chunk */
+/******/ 	(() => {
+/******/ 		__webpack_require__.f = {};
+/******/ 		// This file contains only the entry chunk.
+/******/ 		// The chunk loading function for additional chunks
+/******/ 		__webpack_require__.e = (chunkId) => {
+/******/ 			return Promise.all(Object.keys(__webpack_require__.f).reduce((promises, key) => {
+/******/ 				__webpack_require__.f[key](chunkId, promises);
+/******/ 				return promises;
+/******/ 			}, []));
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get javascript chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.u = (chunkId) => {
+/******/ 			// return url for filenames not based on template
+/******/ 			if (chunkId === "node_modules_react-flickity-component_dist_index-24f78f07_mjs") return "js/" + chunkId + ".js";
+/******/ 			// return url for filenames based on template
+/******/ 			return undefined;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get mini-css chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference all chunks
+/******/ 		__webpack_require__.miniCssF = (chunkId) => {
+/******/ 			// return url for filenames based on template
+/******/ 			return "" + chunkId + ".css";
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -60828,6 +62373,52 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/load script */
+/******/ 	(() => {
+/******/ 		var inProgress = {};
+/******/ 		// data-webpack is not used as build has no uniqueName
+/******/ 		// loadScript function to load a script via script tag
+/******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
+/******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
+/******/ 			var script, needAttach;
+/******/ 			if(key !== undefined) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				for(var i = 0; i < scripts.length; i++) {
+/******/ 					var s = scripts[i];
+/******/ 					if(s.getAttribute("src") == url) { script = s; break; }
+/******/ 				}
+/******/ 			}
+/******/ 			if(!script) {
+/******/ 				needAttach = true;
+/******/ 				script = document.createElement('script');
+/******/ 		
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120;
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 		
+/******/ 				script.src = url;
+/******/ 			}
+/******/ 			inProgress[url] = [done];
+/******/ 			var onScriptComplete = (prev, event) => {
+/******/ 				// avoid mem leaks in IE.
+/******/ 				script.onerror = script.onload = null;
+/******/ 				clearTimeout(timeout);
+/******/ 				var doneFns = inProgress[url];
+/******/ 				delete inProgress[url];
+/******/ 				script.parentNode && script.parentNode.removeChild(script);
+/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
+/******/ 				if(prev) return prev(event);
+/******/ 			}
+/******/ 			;
+/******/ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
+/******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
+/******/ 			script.onload = onScriptComplete.bind(null, script.onload);
+/******/ 			needAttach && document.head.appendChild(script);
+/******/ 		};
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -60850,6 +62441,11 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "/";
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
 /******/ 		// no baseURI
@@ -60862,7 +62458,44 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			"css/app": 0
 /******/ 		};
 /******/ 		
-/******/ 		// no chunk on demand loading
+/******/ 		__webpack_require__.f.j = (chunkId, promises) => {
+/******/ 				// JSONP chunk loading for javascript
+/******/ 				var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
+/******/ 				if(installedChunkData !== 0) { // 0 means "already installed".
+/******/ 		
+/******/ 					// a Promise means "currently loading".
+/******/ 					if(installedChunkData) {
+/******/ 						promises.push(installedChunkData[2]);
+/******/ 					} else {
+/******/ 						if("css/app" != chunkId) {
+/******/ 							// setup Promise in chunk cache
+/******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
+/******/ 							promises.push(installedChunkData[2] = promise);
+/******/ 		
+/******/ 							// start chunk loading
+/******/ 							var url = __webpack_require__.p + __webpack_require__.u(chunkId);
+/******/ 							// create error before stack unwound to get useful stacktrace later
+/******/ 							var error = new Error();
+/******/ 							var loadingEnded = (event) => {
+/******/ 								if(__webpack_require__.o(installedChunks, chunkId)) {
+/******/ 									installedChunkData = installedChunks[chunkId];
+/******/ 									if(installedChunkData !== 0) installedChunks[chunkId] = undefined;
+/******/ 									if(installedChunkData) {
+/******/ 										var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 										var realSrc = event && event.target && event.target.src;
+/******/ 										error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 										error.name = 'ChunkLoadError';
+/******/ 										error.type = errorType;
+/******/ 										error.request = realSrc;
+/******/ 										installedChunkData[1](error);
+/******/ 									}
+/******/ 								}
+/******/ 							};
+/******/ 							__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
+/******/ 						} else installedChunks[chunkId] = 0;
+/******/ 					}
+/******/ 				}
+/******/ 		};
 /******/ 		
 /******/ 		// no prefetching
 /******/ 		
