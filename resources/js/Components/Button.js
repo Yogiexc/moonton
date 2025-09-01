@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 Button.propTypes = {
     type: PropTypes.oneOf(["button", "submit", "reset"]),
-    className: PropTypes.String,
+    className: PropTypes.string,
     variant: PropTypes.oneOf([
         "primary", 
         "warning", 

@@ -4,7 +4,7 @@ FeaturedMovie.propTypes = {
     slug: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
-    thumnail: PropTypes.string.isRequired,
+    thumbnail: PropTypes.string.isRequired,
     rating: PropTypes.number,
 }
 export default function FeaturedMovie ({
