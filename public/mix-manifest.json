@@ -1,4 +1,14 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/reactPlayerHls.js": "/js/reactPlayerHls.js",
+    "/js/reactPlayerDash.js": "/js/reactPlayerDash.js",
+    "/js/reactPlayerMux.js": "/js/reactPlayerMux.js",
+    "/js/reactPlayerYouTube.js": "/js/reactPlayerYouTube.js",
+    "/js/reactPlayerVimeo.js": "/js/reactPlayerVimeo.js",
+    "/js/reactPlayerWistia.js": "/js/reactPlayerWistia.js",
+    "/js/reactPlayerSpotify.js": "/js/reactPlayerSpotify.js",
+    "/js/reactPlayerTwitch.js": "/js/reactPlayerTwitch.js",
+    "/js/reactPlayerTiktok.js": "/js/reactPlayerTiktok.js",
+    "/js/reactPlayerPreview.js": "/js/reactPlayerPreview.js",
     "/css/app.css": "/css/app.css"
 }

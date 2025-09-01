@@ -4511,18 +4511,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ FeaturedMovie)
 /* harmony export */ });
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 FeaturedMovie.propTypes = {
-  slug: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
-  name: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
-  category: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
-  thumbnail: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
-  rating: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().number)
+  slug: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
+  name: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
+  category: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
+  thumbnail: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
+  rating: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().number)
 };
 function FeaturedMovie(_ref) {
   var slug = _ref.slug,
@@ -4531,44 +4533,44 @@ function FeaturedMovie(_ref) {
       thumbnail = _ref.thumbnail,
       _ref$rating = _ref.rating,
       rating = _ref$rating === void 0 ? 0 : _ref$rating;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "absolute overflow-hidden group mr-[30px]",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
       src: thumbnail,
       className: "object-cover rounded-[30px] w-[520px] h-[340px]",
       alt: ""
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "rating absolute top-0 left-0",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "p-[30px] flex items-center gap-1",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
           src: "/assets/icons/ic_star.svg",
           alt: ""
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
           className: "text-sm font-medium text-white mt-1",
           children: [rating.toFixed(1), "/5.0"]
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "absolute bottom-0 h-[100px] left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px]\r rounded-br-[28px] flex justify-between items-center px-7 h-[130px]",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
           className: "font-medium text-[22px] text-white",
           children: name
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
           className: "mb-0 text-white text-sm font-light",
           children: category
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "translate-x-[100px] group-hover:translate-x-0 transition ease-in-out duration-500",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
           src: "/icons/ic_play.svg",
           width: "50",
           alt: ""
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-      href: slug,
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+      href: route("prototype.movie.show", slug),
       className: "inset-0 absolute z-50"
     })]
   });
@@ -4698,50 +4700,52 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ MovieCard)
 /* harmony export */ });
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 MovieCard.propTypes = {
-  slug: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
-  name: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
-  category: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
-  thumbnail: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired)
+  slug: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
+  name: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
+  category: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired),
+  thumbnail: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string.isRequired)
 };
 function MovieCard(_ref) {
   var slug = _ref.slug,
       name = _ref.name,
       category = _ref.category,
       thumbnail = _ref.thumbnail;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "absolute group overflow-hidden mr-[30px]",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
       src: thumbnail,
       className: "object-cover rounded-[30px] h-[340px] w-[250px]",
       alt: ""
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px]",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "px-7 pb-7",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
           className: "font-medium text-xl text-white",
           children: name
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
           className: "mb-0 text-gray-300 text-base mt-[10px]",
           children: category
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "absolute top-1/2 left-1/2 -translate-y-[500px] group-hover:-translate-y-1/2\r -translate-x-1/2 z-20 transition ease-in-out duration-500",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
         src: "/icons/ic_play.svg",
         width: "50",
         alt: ""
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-      href: slug,
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+      href: route("prototype.movie.show", slug),
       className: "inset-0 absolute z-50"
     })]
   });
@@ -5244,8 +5248,8 @@ function Sidebar() {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "text-gray-1 text-sm mb-4",
             children: "Menu"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-            href: "/",
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+            href: route('prototype.dashboard'),
             className: "side-link active",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
               width: "24",
@@ -6395,6 +6399,58 @@ function Login() {
           })]
         })
       })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Prototype/Movie/Show.js":
+/*!****************************************************!*\
+  !*** ./resources/js/Pages/Prototype/Movie/Show.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Show)
+/* harmony export */ });
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_player__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-player */ "./node_modules/react-player/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function Show() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
+    className: "mx-auto w-screen h-screen relative watching-page font-poppins bg-form-bg",
+    id: "stream",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "pt-[100px]",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_player__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        url: "https://www.youtube.com/watch?v=a6aNvKntetY",
+        controls: true,
+        width: "100%",
+        height: "850px"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "absolute top-5 left-5 z-20",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+        href: route("prototype.dashboard"),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          src: "/icons/ic_arrow-left.svg",
+          className: "transition-all btn-back w-[46px]",
+          alt: "stream"
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "absolute title-video top-7 left-1/2 -translate-x-1/2 max-w-[310px] md:max-w-[620px] text-center",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "font-medium text-2xl transition-all text-white drop-shadow-md select-none",
+        children: "Details Screen Part Final"
+      })
     })]
   });
 }
@@ -61119,6 +61175,8 @@ var map = {
 	"./Prototype/Dashboard.js": "./resources/js/Pages/Prototype/Dashboard.js",
 	"./Prototype/Login": "./resources/js/Pages/Prototype/Login.js",
 	"./Prototype/Login.js": "./resources/js/Pages/Prototype/Login.js",
+	"./Prototype/Movie/Show": "./resources/js/Pages/Prototype/Movie/Show.js",
+	"./Prototype/Movie/Show.js": "./resources/js/Pages/Prototype/Movie/Show.js",
 	"./Prototype/Register": "./resources/js/Pages/Prototype/Register.js",
 	"./Prototype/Register.js": "./resources/js/Pages/Prototype/Register.js",
 	"./Prototype/SubscriptionPlan": "./resources/js/Pages/Prototype/SubscriptionPlan.js",
@@ -62409,6 +62467,504 @@ Oe.defaultProps = {
 
 /***/ }),
 
+/***/ "./node_modules/react-player/dist/HtmlPlayer.js":
+/*!******************************************************!*\
+  !*** ./node_modules/react-player/dist/HtmlPlayer.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ HtmlPlayer_default)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _patterns_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./patterns.js */ "./node_modules/react-player/dist/patterns.js");
+
+
+const HtmlPlayer = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((props, ref) => {
+  const Media = _patterns_js__WEBPACK_IMPORTED_MODULE_1__.AUDIO_EXTENSIONS.test(`${props.src}`) ? "audio" : "video";
+  return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(Media, { ...props, ref }, props.children);
+});
+var HtmlPlayer_default = HtmlPlayer;
+
+
+
+/***/ }),
+
+/***/ "./node_modules/react-player/dist/Player.js":
+/*!**************************************************!*\
+  !*** ./node_modules/react-player/dist/Player.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Player_default)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+const Player = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((props, ref) => {
+  const { playing, pip } = props;
+  const Player2 = props.activePlayer;
+  const playerRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const startOnPlayRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(true);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    var _a, _b;
+    if (!playerRef.current) return;
+    if (playerRef.current.paused && playing === true) {
+      playerRef.current.play();
+    }
+    if (!playerRef.current.paused && playing === false) {
+      playerRef.current.pause();
+    }
+    playerRef.current.playbackRate = (_a = props.playbackRate) != null ? _a : 1;
+    playerRef.current.volume = (_b = props.volume) != null ? _b : 1;
+  });
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    var _a, _b, _c, _d, _e;
+    if (!playerRef.current || !globalThis.document) return;
+    if (pip && !document.pictureInPictureElement) {
+      try {
+        (_b = (_a = playerRef.current).requestPictureInPicture) == null ? void 0 : _b.call(_a);
+      } catch (err) {
+      }
+    }
+    if (!pip && document.pictureInPictureElement) {
+      try {
+        (_d = (_c = playerRef.current).exitPictureInPicture) == null ? void 0 : _d.call(_c);
+        (_e = document.exitPictureInPicture) == null ? void 0 : _e.call(document);
+      } catch (err) {
+      }
+    }
+  }, [pip]);
+  const handleLoadStart = (event) => {
+    var _a, _b;
+    startOnPlayRef.current = true;
+    (_a = props.onReady) == null ? void 0 : _a.call(props);
+    (_b = props.onLoadStart) == null ? void 0 : _b.call(props, event);
+  };
+  const handlePlay = (event) => {
+    var _a, _b;
+    if (startOnPlayRef.current) {
+      startOnPlayRef.current = false;
+      (_a = props.onStart) == null ? void 0 : _a.call(props, event);
+    }
+    (_b = props.onPlay) == null ? void 0 : _b.call(props, event);
+  };
+  if (!Player2) {
+    return null;
+  }
+  const eventProps = {};
+  const reactPlayerEventHandlers = ["onReady", "onStart"];
+  for (const key in props) {
+    if (key.startsWith("on") && !reactPlayerEventHandlers.includes(key)) {
+      eventProps[key] = props[key];
+    }
+  }
+  return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(
+    Player2,
+    {
+      ...eventProps,
+      style: props.style,
+      className: props.className,
+      slot: props.slot,
+      ref: (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(
+        (node) => {
+          playerRef.current = node;
+          if (typeof ref === "function") {
+            ref(node);
+          } else if (ref !== null) {
+            ref.current = node;
+          }
+        },
+        [ref]
+      ),
+      src: props.src,
+      crossOrigin: props.crossOrigin,
+      preload: props.preload,
+      controls: props.controls,
+      muted: props.muted,
+      autoPlay: props.autoPlay,
+      loop: props.loop,
+      playsInline: props.playsInline,
+      config: props.config,
+      onLoadStart: handleLoadStart,
+      onPlay: handlePlay
+    },
+    props.children
+  );
+});
+Player.displayName = "Player";
+var Player_default = Player;
+
+
+
+/***/ }),
+
+/***/ "./node_modules/react-player/dist/ReactPlayer.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/react-player/dist/ReactPlayer.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "createReactPlayer": () => (/* binding */ createReactPlayer)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _props_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./props.js */ "./node_modules/react-player/dist/props.js");
+/* harmony import */ var _Player_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Player.js */ "./node_modules/react-player/dist/Player.js");
+
+
+
+const Preview = (0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() | reactPlayerPreview */ "reactPlayerPreview").then(__webpack_require__.bind(__webpack_require__, /*! ./Preview.js */ "./node_modules/react-player/dist/Preview.js")));
+const customPlayers = [];
+const createReactPlayer = (players, playerFallback) => {
+  const getActivePlayer = (src) => {
+    for (const player of [...customPlayers, ...players]) {
+      if (src && player.canPlay(src)) {
+        return player;
+      }
+    }
+    if (playerFallback) {
+      return playerFallback;
+    }
+    return null;
+  };
+  const ReactPlayer = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((_props, ref) => {
+    const props = { ..._props_js__WEBPACK_IMPORTED_MODULE_1__.defaultProps, ..._props };
+    const { src, slot, className, style, width, height, fallback, wrapper } = props;
+    const [showPreview, setShowPreview] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(!!props.light);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+      if (props.light) {
+        setShowPreview(true);
+      } else {
+        setShowPreview(false);
+      }
+    }, [props.light]);
+    const handleClickPreview = (e) => {
+      var _a;
+      setShowPreview(false);
+      (_a = props.onClickPreview) == null ? void 0 : _a.call(props, e);
+    };
+    const renderPreview = (src2) => {
+      if (!src2) return null;
+      const { light, playIcon, previewTabIndex, oEmbedUrl, previewAriaLabel } = props;
+      return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(
+        Preview,
+        {
+          src: src2,
+          light,
+          playIcon,
+          previewTabIndex,
+          previewAriaLabel,
+          oEmbedUrl,
+          onClickPreview: handleClickPreview
+        }
+      );
+    };
+    const renderActivePlayer = (src2) => {
+      var _a, _b;
+      const player = getActivePlayer(src2);
+      if (!player) return null;
+      const { style: style2, width: width2, height: height2, wrapper: wrapper2 } = props;
+      const config = (_a = props.config) == null ? void 0 : _a[player.key];
+      return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(
+        _Player_js__WEBPACK_IMPORTED_MODULE_2__["default"],
+        {
+          ...props,
+          ref,
+          activePlayer: (_b = player.player) != null ? _b : player,
+          slot: wrapper2 ? void 0 : slot,
+          className: wrapper2 ? void 0 : className,
+          style: wrapper2 ? { display: "block", width: "100%", height: "100%" } : { display: "block", width: width2, height: height2, ...style2 },
+          config
+        }
+      );
+    };
+    const Wrapper = wrapper == null ? ForwardChildren : wrapper;
+    const UniversalSuspense = fallback === false ? ForwardChildren : react__WEBPACK_IMPORTED_MODULE_0__.Suspense;
+    return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(Wrapper, { slot, className, style: { width, height, ...style } }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(UniversalSuspense, { fallback }, showPreview ? renderPreview(src) : renderActivePlayer(src)));
+  });
+  ReactPlayer.displayName = "ReactPlayer";
+  ReactPlayer.addCustomPlayer = (player) => {
+    customPlayers.push(player);
+  };
+  ReactPlayer.removeCustomPlayers = () => {
+    customPlayers.length = 0;
+  };
+  ReactPlayer.canPlay = (src) => {
+    if (src) {
+      for (const Player2 of [...customPlayers, ...players]) {
+        if (Player2.canPlay(src)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  };
+  ReactPlayer.canEnablePIP = (src) => {
+    var _a;
+    if (src) {
+      for (const Player2 of [...customPlayers, ...players]) {
+        if (Player2.canPlay(src) && ((_a = Player2.canEnablePIP) == null ? void 0 : _a.call(Player2))) {
+          return true;
+        }
+      }
+    }
+    return false;
+  };
+  return ReactPlayer;
+};
+const ForwardChildren = ({ children }) => children;
+
+
+
+/***/ }),
+
+/***/ "./node_modules/react-player/dist/index.js":
+/*!*************************************************!*\
+  !*** ./node_modules/react-player/dist/index.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ src_default)
+/* harmony export */ });
+/* harmony import */ var _players_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./players.js */ "./node_modules/react-player/dist/players.js");
+/* harmony import */ var _ReactPlayer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ReactPlayer.js */ "./node_modules/react-player/dist/ReactPlayer.js");
+"use client";
+
+
+const fallback = _players_js__WEBPACK_IMPORTED_MODULE_0__["default"][_players_js__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1];
+var src_default = (0,_ReactPlayer_js__WEBPACK_IMPORTED_MODULE_1__.createReactPlayer)(_players_js__WEBPACK_IMPORTED_MODULE_0__["default"], fallback);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/react-player/dist/patterns.js":
+/*!****************************************************!*\
+  !*** ./node_modules/react-player/dist/patterns.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AUDIO_EXTENSIONS": () => (/* binding */ AUDIO_EXTENSIONS),
+/* harmony export */   "DASH_EXTENSIONS": () => (/* binding */ DASH_EXTENSIONS),
+/* harmony export */   "HLS_EXTENSIONS": () => (/* binding */ HLS_EXTENSIONS),
+/* harmony export */   "MATCH_URL_MUX": () => (/* binding */ MATCH_URL_MUX),
+/* harmony export */   "MATCH_URL_SPOTIFY": () => (/* binding */ MATCH_URL_SPOTIFY),
+/* harmony export */   "MATCH_URL_TIKTOK": () => (/* binding */ MATCH_URL_TIKTOK),
+/* harmony export */   "MATCH_URL_TWITCH": () => (/* binding */ MATCH_URL_TWITCH),
+/* harmony export */   "MATCH_URL_VIMEO": () => (/* binding */ MATCH_URL_VIMEO),
+/* harmony export */   "MATCH_URL_WISTIA": () => (/* binding */ MATCH_URL_WISTIA),
+/* harmony export */   "MATCH_URL_YOUTUBE": () => (/* binding */ MATCH_URL_YOUTUBE),
+/* harmony export */   "VIDEO_EXTENSIONS": () => (/* binding */ VIDEO_EXTENSIONS),
+/* harmony export */   "canPlay": () => (/* binding */ canPlay)
+/* harmony export */ });
+const AUDIO_EXTENSIONS = /\.(m4a|m4b|mp4a|mpga|mp2|mp2a|mp3|m2a|m3a|wav|weba|aac|oga|spx)($|\?)/i;
+const VIDEO_EXTENSIONS = /\.(mp4|og[gv]|webm|mov|m4v)(#t=[,\d+]+)?($|\?)/i;
+const HLS_EXTENSIONS = /\.(m3u8)($|\?)/i;
+const DASH_EXTENSIONS = /\.(mpd)($|\?)/i;
+const MATCH_URL_MUX = /stream\.mux\.com\/(?!\w+\.m3u8)(\w+)/;
+const MATCH_URL_YOUTUBE = /(?:youtu\.be\/|youtube(?:-nocookie|education)?\.com\/(?:embed\/|v\/|watch\/|watch\?v=|watch\?.+&v=|shorts\/|live\/))((\w|-){11})|youtube\.com\/playlist\?list=|youtube\.com\/user\//;
+const MATCH_URL_VIMEO = /vimeo\.com\/(?!progressive_redirect).+/;
+const MATCH_URL_WISTIA = /(?:wistia\.(?:com|net)|wi\.st)\/(?:medias|embed)\/(?:iframe\/)?([^?]+)/;
+const MATCH_URL_SPOTIFY = /open\.spotify\.com\/(\w+)\/(\w+)/i;
+const MATCH_URL_TWITCH = /(?:www\.|go\.)?twitch\.tv\/([a-zA-Z0-9_]+|(videos?\/|\?video=)\d+)($|\?)/;
+const MATCH_URL_TIKTOK = /tiktok\.com\/(?:player\/v1\/|share\/video\/|@[^/]+\/video\/)([0-9]+)/;
+const canPlayFile = (url, test) => {
+  if (Array.isArray(url)) {
+    for (const item of url) {
+      if (typeof item === "string" && canPlayFile(item, test)) {
+        return true;
+      }
+      if (canPlayFile(item.src, test)) {
+        return true;
+      }
+    }
+    return false;
+  }
+  return test(url);
+};
+const canPlay = {
+  html: (url) => canPlayFile(url, (u) => AUDIO_EXTENSIONS.test(u) || VIDEO_EXTENSIONS.test(u)),
+  hls: (url) => canPlayFile(url, (u) => HLS_EXTENSIONS.test(u)),
+  dash: (url) => canPlayFile(url, (u) => DASH_EXTENSIONS.test(u)),
+  mux: (url) => MATCH_URL_MUX.test(url),
+  youtube: (url) => MATCH_URL_YOUTUBE.test(url),
+  vimeo: (url) => MATCH_URL_VIMEO.test(url) && !VIDEO_EXTENSIONS.test(url) && !HLS_EXTENSIONS.test(url),
+  wistia: (url) => MATCH_URL_WISTIA.test(url),
+  spotify: (url) => MATCH_URL_SPOTIFY.test(url),
+  twitch: (url) => MATCH_URL_TWITCH.test(url),
+  tiktok: (url) => MATCH_URL_TIKTOK.test(url)
+};
+
+
+
+/***/ }),
+
+/***/ "./node_modules/react-player/dist/players.js":
+/*!***************************************************!*\
+  !*** ./node_modules/react-player/dist/players.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ players_default)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _patterns_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./patterns.js */ "./node_modules/react-player/dist/patterns.js");
+/* harmony import */ var _HtmlPlayer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HtmlPlayer.js */ "./node_modules/react-player/dist/HtmlPlayer.js");
+
+
+
+const Players = [
+  {
+    key: "hls",
+    name: "hls.js",
+    canPlay: _patterns_js__WEBPACK_IMPORTED_MODULE_1__.canPlay.hls,
+    canEnablePIP: () => true,
+    player: (0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(
+      () => __webpack_require__.e(/*! import() | reactPlayerHls */ "reactPlayerHls").then(__webpack_require__.bind(__webpack_require__, /*! hls-video-element/react */ "./node_modules/hls-video-element/dist/react.js"))
+    )
+  },
+  {
+    key: "dash",
+    name: "dash.js",
+    canPlay: _patterns_js__WEBPACK_IMPORTED_MODULE_1__.canPlay.dash,
+    canEnablePIP: () => true,
+    player: (0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(
+      () => __webpack_require__.e(/*! import() | reactPlayerDash */ "reactPlayerDash").then(__webpack_require__.bind(__webpack_require__, /*! dash-video-element/react */ "./node_modules/dash-video-element/dist/react.js"))
+    )
+  },
+  {
+    key: "mux",
+    name: "Mux",
+    canPlay: _patterns_js__WEBPACK_IMPORTED_MODULE_1__.canPlay.mux,
+    canEnablePIP: () => true,
+    player: (0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(
+      () => __webpack_require__.e(/*! import() | reactPlayerMux */ "reactPlayerMux").then(__webpack_require__.bind(__webpack_require__, /*! @mux/mux-player-react */ "./node_modules/@mux/mux-player-react/dist/index.mjs"))
+    )
+  },
+  {
+    key: "youtube",
+    name: "YouTube",
+    canPlay: _patterns_js__WEBPACK_IMPORTED_MODULE_1__.canPlay.youtube,
+    player: (0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(
+      () => __webpack_require__.e(/*! import() | reactPlayerYouTube */ "reactPlayerYouTube").then(__webpack_require__.bind(__webpack_require__, /*! youtube-video-element/react */ "./node_modules/youtube-video-element/dist/react.js"))
+    )
+  },
+  {
+    key: "vimeo",
+    name: "Vimeo",
+    canPlay: _patterns_js__WEBPACK_IMPORTED_MODULE_1__.canPlay.vimeo,
+    player: (0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(
+      () => __webpack_require__.e(/*! import() | reactPlayerVimeo */ "reactPlayerVimeo").then(__webpack_require__.bind(__webpack_require__, /*! vimeo-video-element/react */ "./node_modules/vimeo-video-element/dist/react.js"))
+    )
+  },
+  {
+    key: "wistia",
+    name: "Wistia",
+    canPlay: _patterns_js__WEBPACK_IMPORTED_MODULE_1__.canPlay.wistia,
+    canEnablePIP: () => true,
+    player: (0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(
+      () => __webpack_require__.e(/*! import() | reactPlayerWistia */ "reactPlayerWistia").then(__webpack_require__.bind(__webpack_require__, /*! wistia-video-element/react */ "./node_modules/wistia-video-element/dist/react.js"))
+    )
+  },
+  {
+    key: "spotify",
+    name: "Spotify",
+    canPlay: _patterns_js__WEBPACK_IMPORTED_MODULE_1__.canPlay.spotify,
+    canEnablePIP: () => false,
+    player: (0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(
+      () => __webpack_require__.e(/*! import() | reactPlayerSpotify */ "reactPlayerSpotify").then(__webpack_require__.bind(__webpack_require__, /*! spotify-audio-element/react */ "./node_modules/spotify-audio-element/dist/react.js"))
+    )
+  },
+  {
+    key: "twitch",
+    name: "Twitch",
+    canPlay: _patterns_js__WEBPACK_IMPORTED_MODULE_1__.canPlay.twitch,
+    canEnablePIP: () => false,
+    player: (0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(
+      () => __webpack_require__.e(/*! import() | reactPlayerTwitch */ "reactPlayerTwitch").then(__webpack_require__.bind(__webpack_require__, /*! twitch-video-element/react */ "./node_modules/twitch-video-element/dist/react.js"))
+    )
+  },
+  {
+    key: "tiktok",
+    name: "TikTok",
+    canPlay: _patterns_js__WEBPACK_IMPORTED_MODULE_1__.canPlay.tiktok,
+    canEnablePIP: () => false,
+    player: (0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(
+      () => __webpack_require__.e(/*! import() | reactPlayerTiktok */ "reactPlayerTiktok").then(__webpack_require__.bind(__webpack_require__, /*! tiktok-video-element/react */ "./node_modules/tiktok-video-element/dist/react.js"))
+    )
+  },
+  {
+    key: "html",
+    name: "html",
+    canPlay: _patterns_js__WEBPACK_IMPORTED_MODULE_1__.canPlay.html,
+    canEnablePIP: () => true,
+    player: _HtmlPlayer_js__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }
+];
+var players_default = Players;
+
+
+
+/***/ }),
+
+/***/ "./node_modules/react-player/dist/props.js":
+/*!*************************************************!*\
+  !*** ./node_modules/react-player/dist/props.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "defaultProps": () => (/* binding */ defaultProps)
+/* harmony export */ });
+const defaultProps = {
+  // Falsy values don't need to be defined
+  //
+  // native video attrs
+  // src: undefined,
+  // preload: undefined,
+  // crossOrigin: undefined,
+  // autoPlay: false,
+  // muted: false,
+  // loop: false,
+  // controls: false,
+  // playsInline: false,
+  width: "320px",
+  height: "180px",
+  // native video props
+  volume: 1,
+  playbackRate: 1,
+  // custom props
+  // playing: undefined,
+  // pip: false,
+  // light: false,
+  // fallback: null,
+  previewTabIndex: 0,
+  previewAriaLabel: "",
+  oEmbedUrl: "https://noembed.com/embed?url={url}"
+};
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@inertiajs/inertia/node_modules/axios/package.json":
 /*!*************************************************************************!*\
   !*** ./node_modules/@inertiajs/inertia/node_modules/axios/package.json ***!
@@ -62527,7 +63083,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if (chunkId === "node_modules_react-flickity-component_dist_index-24f78f07_mjs") return "js/" + chunkId + ".js";
+/******/ 			if ({"node_modules_react-flickity-component_dist_index-24f78f07_mjs":1,"reactPlayerHls":1,"reactPlayerDash":1,"reactPlayerMux":1,"reactPlayerYouTube":1,"reactPlayerVimeo":1,"reactPlayerWistia":1,"reactPlayerSpotify":1,"reactPlayerTwitch":1,"reactPlayerTiktok":1,"reactPlayerPreview":1,"node_modules_dashjs_dist_modern_esm_dash_all_min_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
