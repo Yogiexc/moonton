@@ -1,10 +1,11 @@
+import { Link } from "@inertiajs/inertia-react";
 import PropTypes from "prop-types";
 
 FeaturedMovie.propTypes = {
     slug: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
-    thumnail: PropTypes.string.isRequired,
+    thumbnail: PropTypes.string.isRequired,
     rating: PropTypes.number,
 }
 export default function FeaturedMovie ({
@@ -51,8 +52,8 @@ export default function FeaturedMovie ({
                     <img src="/icons/ic_play.svg" width="50" alt="" />
                 </div>
             </div>
-            <a href={slug}
-                className="inset-0 absolute z-50"></a>
+            <Link href={route("prototype.movie.show", slug)}
+                className="inset-0 absolute z-50"></Link>
         </div>
     );
 }
