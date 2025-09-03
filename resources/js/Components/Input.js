@@ -1,38 +1,62 @@
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 
 export default function Input({
-    type = 'text',
-    name,
-    value,
-    className,
-    autoComplete,
-    required,
-    isFocused,
-    handleChange,
+  type = 'text',
+  name,
+  value,
+  defaultValue,
+  className = '',
+  variant = 'primary',
+  autoComplete = false,
+  required = false,
+  isFocused = false,
+  handleChange = () => {},
+  placeholder = '',
+  isError = false,
 }) {
-    const input = useRef();
+  const input = useRef();
 
-    useEffect(() => {
-        if (isFocused) {
-            input.current.focus();
-        }
-    }, []);
+  useEffect(() => {
+    if (isFocused && input.current) {
+      input.current.focus();
+    }
+  }, [isFocused]);
 
-    return (
-        <div className="flex flex-col items-start">
-            <input
-                type={type}
-                name={name}
-                value={value}
-                className={
-                    `border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm ` +
-                    className
-                }
-                ref={input}
-                autoComplete={autoComplete}
-                required={required}
-                onChange={(e) => handleChange(e)}
-            />
-        </div>
-    );
+  return (
+    <div className="flex flex-col items-start w-full">
+      <input
+        type={type}
+        name={name}
+        value={value}
+        defaultValue={defaultValue}
+        className={`rounded-2xl py-[13px] px-7 w-full
+          ${variant === 'primary' ? 'bg-form-bg' : ''}
+          ${variant === 'primary-outline' ? 'border border-white bg-transparent' : ''}
+          ${variant === 'error' || isError ? 'border border-red-500 bg-red-50 text-red-600' : ''}
+          ${className}`}
+        ref={input}
+        autoComplete={autoComplete ? 'on' : 'off'}
+        required={required}
+        onChange={(e) => handleChange(e)}
+        placeholder={placeholder}
+      />
+    </div>
+  );
 }
+
+// 👇 PropTypes didefinisikan SETELAH komponen, bukan sebelum export
+Input.propTypes = {
+  type: PropTypes.oneOf(['text', 'email', 'password', 'number', 'file']),
+  name: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  className: PropTypes.string,
+  variant: PropTypes.oneOf(['primary', 'error', 'primary-outline']),
+  autoComplete: PropTypes.bool,
+  required: PropTypes.bool,
+  isFocused: PropTypes.bool,
+  handleChange: PropTypes.func,
+  placeholder: PropTypes.string,
+  isError: PropTypes.bool,
+};
