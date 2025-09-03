@@ -1,115 +1,148 @@
-"use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["reactPlayerPreview"],{
 
-/***/ "./node_modules/react-player/dist/Preview.js":
-/*!***************************************************!*\
-  !*** ./node_modules/react-player/dist/Preview.js ***!
-  \***************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+/***/ "./node_modules/react-player/lib/Preview.js":
+/*!**************************************************!*\
+  !*** ./node_modules/react-player/lib/Preview.js ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Preview_default)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var __publicField = (obj, key, value) => {
+  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  return value;
+};
+var Preview_exports = {};
+__export(Preview_exports, {
+  default: () => Preview
+});
+module.exports = __toCommonJS(Preview_exports);
+var import_react = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 const ICON_SIZE = "64px";
 const cache = {};
-const Preview = ({
-  src,
-  light,
-  oEmbedUrl,
-  onClickPreview,
-  playIcon,
-  previewTabIndex,
-  previewAriaLabel
-}) => {
-  const [image, setImage] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    if (!src || !light || !oEmbedUrl) return;
-    fetchImage({ src, light, oEmbedUrl });
-  }, [src, light, oEmbedUrl]);
-  const fetchImage = async ({
-    src: src2,
-    light: light2,
-    oEmbedUrl: oEmbedUrl2
-  }) => {
-    if (react__WEBPACK_IMPORTED_MODULE_0__.isValidElement(light2)) {
+class Preview extends import_react.Component {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "mounted", false);
+    __publicField(this, "state", {
+      image: null
+    });
+    __publicField(this, "handleKeyPress", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        this.props.onClick();
+      }
+    });
+  }
+  componentDidMount() {
+    this.mounted = true;
+    this.fetchImage(this.props);
+  }
+  componentDidUpdate(prevProps) {
+    const { url, light } = this.props;
+    if (prevProps.url !== url || prevProps.light !== light) {
+      this.fetchImage(this.props);
+    }
+  }
+  componentWillUnmount() {
+    this.mounted = false;
+  }
+  fetchImage({ url, light, oEmbedUrl }) {
+    if (import_react.default.isValidElement(light)) {
       return;
     }
-    if (typeof light2 === "string") {
-      setImage(light2);
+    if (typeof light === "string") {
+      this.setState({ image: light });
       return;
     }
-    if (cache[src2]) {
-      setImage(cache[src2]);
+    if (cache[url]) {
+      this.setState({ image: cache[url] });
       return;
     }
-    setImage(null);
-    const response = await fetch(oEmbedUrl2.replace("{url}", src2));
-    const data = await response.json();
-    if (data.thumbnail_url) {
-      const fetchedImage = data.thumbnail_url.replace("height=100", "height=480").replace("-d_295x166", "-d_640");
-      setImage(fetchedImage);
-      cache[src2] = fetchedImage;
-    }
-  };
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      onClickPreview == null ? void 0 : onClickPreview(e);
-    }
-  };
-  const handleClick = (e) => {
-    onClickPreview == null ? void 0 : onClickPreview(e);
-  };
-  const isElement = react__WEBPACK_IMPORTED_MODULE_0__.isValidElement(light);
-  const flexCenter = {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center"
-  };
-  const styles = {
-    preview: {
-      width: "100%",
-      height: "100%",
-      backgroundImage: image && !isElement ? `url(${image})` : void 0,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      cursor: "pointer",
-      ...flexCenter
-    },
-    shadow: {
-      background: "radial-gradient(rgb(0, 0, 0, 0.3), rgba(0, 0, 0, 0) 60%)",
-      borderRadius: ICON_SIZE,
-      width: ICON_SIZE,
-      height: ICON_SIZE,
-      position: isElement ? "absolute" : void 0,
-      ...flexCenter
-    },
-    playIcon: {
-      borderStyle: "solid",
-      borderWidth: "16px 0 16px 26px",
-      borderColor: "transparent transparent transparent white",
-      marginLeft: "7px"
-    }
-  };
-  const defaultPlayIcon = /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: styles.shadow, className: "react-player__shadow" }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: styles.playIcon, className: "react-player__play-icon" }));
-  return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(
-    "div",
-    {
-      style: styles.preview,
-      className: "react-player__preview",
-      tabIndex: previewTabIndex,
-      onClick: handleClick,
-      onKeyPress: handleKeyPress,
-      ...previewAriaLabel ? { "aria-label": previewAriaLabel } : {}
-    },
-    isElement ? light : null,
-    playIcon || defaultPlayIcon
-  );
-};
-var Preview_default = Preview;
-
+    this.setState({ image: null });
+    return window.fetch(oEmbedUrl.replace("{url}", url)).then((response) => response.json()).then((data) => {
+      if (data.thumbnail_url && this.mounted) {
+        const image = data.thumbnail_url.replace("height=100", "height=480").replace("-d_295x166", "-d_640");
+        this.setState({ image });
+        cache[url] = image;
+      }
+    });
+  }
+  render() {
+    const { light, onClick, playIcon, previewTabIndex, previewAriaLabel } = this.props;
+    const { image } = this.state;
+    const isElement = import_react.default.isValidElement(light);
+    const flexCenter = {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    };
+    const styles = {
+      preview: {
+        width: "100%",
+        height: "100%",
+        backgroundImage: image && !isElement ? `url(${image})` : void 0,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        cursor: "pointer",
+        ...flexCenter
+      },
+      shadow: {
+        background: "radial-gradient(rgb(0, 0, 0, 0.3), rgba(0, 0, 0, 0) 60%)",
+        borderRadius: ICON_SIZE,
+        width: ICON_SIZE,
+        height: ICON_SIZE,
+        position: isElement ? "absolute" : void 0,
+        ...flexCenter
+      },
+      playIcon: {
+        borderStyle: "solid",
+        borderWidth: "16px 0 16px 26px",
+        borderColor: "transparent transparent transparent white",
+        marginLeft: "7px"
+      }
+    };
+    const defaultPlayIcon = /* @__PURE__ */ import_react.default.createElement("div", { style: styles.shadow, className: "react-player__shadow" }, /* @__PURE__ */ import_react.default.createElement("div", { style: styles.playIcon, className: "react-player__play-icon" }));
+    return /* @__PURE__ */ import_react.default.createElement(
+      "div",
+      {
+        style: styles.preview,
+        className: "react-player__preview",
+        onClick,
+        tabIndex: previewTabIndex,
+        onKeyPress: this.handleKeyPress,
+        ...previewAriaLabel ? { "aria-label": previewAriaLabel } : {}
+      },
+      isElement ? light : null,
+      playIcon || defaultPlayIcon
+    );
+  }
+}
 
 
 /***/ })

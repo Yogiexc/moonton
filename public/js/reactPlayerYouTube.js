@@ -1,716 +1,233 @@
-"use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["reactPlayerYouTube"],{
 
-/***/ "./node_modules/youtube-video-element/dist/react.js":
+/***/ "./node_modules/react-player/lib/players/YouTube.js":
 /*!**********************************************************!*\
-  !*** ./node_modules/youtube-video-element/dist/react.js ***!
+  !*** ./node_modules/react-player/lib/players/YouTube.js ***!
   \**********************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ react_default)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _youtube_video_element_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./youtube-video-element.js */ "./node_modules/youtube-video-element/dist/youtube-video-element.js");
-"use client";
-
-// dist/react.ts
-
-
-
-// ../../node_modules/ce-la-react/dist/ce-la-react.js
-var reservedReactProps = /* @__PURE__ */ new Set([
-  "style",
-  "children",
-  "ref",
-  "key",
-  "suppressContentEditableWarning",
-  "suppressHydrationWarning",
-  "dangerouslySetInnerHTML"
-]);
-var reactPropToAttrNameMap = {
-  className: "class",
-  htmlFor: "for"
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
 };
-function defaultToAttributeName(propName) {
-  return propName.toLowerCase();
-}
-function defaultToAttributeValue(propValue) {
-  if (typeof propValue === "boolean") return propValue ? "" : void 0;
-  if (typeof propValue === "function") return void 0;
-  if (typeof propValue === "object" && propValue !== null) return void 0;
-  return propValue;
-}
-function createComponent({
-  react: React2,
-  tagName,
-  elementClass,
-  events,
-  displayName,
-  defaultProps,
-  toAttributeName = defaultToAttributeName,
-  toAttributeValue = defaultToAttributeValue
-}) {
-  const IS_REACT_19_OR_NEWER = Number.parseInt(React2.version) >= 19;
-  const ReactComponent = React2.forwardRef((props, ref) => {
-    var _a, _b;
-    const elementRef = React2.useRef(null);
-    const prevElemPropsRef = React2.useRef(/* @__PURE__ */ new Map());
-    const eventProps = {};
-    const attrs = {};
-    const reactProps = {};
-    const elementProps = {};
-    for (const [k, v] of Object.entries(props)) {
-      if (reservedReactProps.has(k)) {
-        reactProps[k] = v;
-        continue;
-      }
-      const attrName = toAttributeName(reactPropToAttrNameMap[k] ?? k);
-      if (elementClass.prototype && k in elementClass.prototype && !(k in (((_a = globalThis.HTMLElement) == null ? void 0 : _a.prototype) ?? {})) && !((_b = elementClass.observedAttributes) == null ? void 0 : _b.some((attr) => attr === attrName))) {
-        elementProps[k] = v;
-        continue;
-      }
-      if (k.startsWith("on")) {
-        eventProps[k] = v;
-        continue;
-      }
-      const attrValue = toAttributeValue(v);
-      if (attrName && attrValue != null) {
-        attrs[attrName] = String(attrValue);
-        if (!IS_REACT_19_OR_NEWER) {
-          reactProps[attrName] = attrValue;
-        }
-      }
-      if (attrName && IS_REACT_19_OR_NEWER) {
-        const attrValueFromDefault = defaultToAttributeValue(v);
-        if (attrValue !== attrValueFromDefault) {
-          reactProps[attrName] = attrValue;
-        } else {
-          reactProps[attrName] = v;
-        }
-      }
-    }
-    if (typeof window !== "undefined") {
-      for (const propName in eventProps) {
-        const callback = eventProps[propName];
-        const useCapture = propName.endsWith("Capture");
-        const eventName = ((events == null ? void 0 : events[propName]) ?? propName.slice(2).toLowerCase()).slice(
-          0,
-          useCapture ? -7 : void 0
-        );
-        React2.useLayoutEffect(() => {
-          const eventTarget = elementRef == null ? void 0 : elementRef.current;
-          if (!eventTarget || typeof callback !== "function") return;
-          eventTarget.addEventListener(eventName, callback, useCapture);
-          return () => {
-            eventTarget.removeEventListener(eventName, callback, useCapture);
-          };
-        }, [elementRef == null ? void 0 : elementRef.current, callback]);
-      }
-      React2.useLayoutEffect(() => {
-        if (elementRef.current === null) return;
-        const newElemProps = /* @__PURE__ */ new Map();
-        for (const key in elementProps) {
-          setProperty(elementRef.current, key, elementProps[key]);
-          prevElemPropsRef.current.delete(key);
-          newElemProps.set(key, elementProps[key]);
-        }
-        for (const [key, _value] of prevElemPropsRef.current) {
-          setProperty(elementRef.current, key, void 0);
-        }
-        prevElemPropsRef.current = newElemProps;
-      });
-    }
-    if (typeof window === "undefined" && (elementClass == null ? void 0 : elementClass.getTemplateHTML) && (elementClass == null ? void 0 : elementClass.shadowRootOptions)) {
-      const { mode, delegatesFocus } = elementClass.shadowRootOptions;
-      const templateShadowRoot = React2.createElement("template", {
-        shadowrootmode: mode,
-        shadowrootdelegatesfocus: delegatesFocus,
-        dangerouslySetInnerHTML: {
-          __html: elementClass.getTemplateHTML(attrs, props)
-        }
-      });
-      reactProps.children = [templateShadowRoot, reactProps.children];
-    }
-    return React2.createElement(tagName, {
-      ...defaultProps,
-      ...reactProps,
-      ref: React2.useCallback(
-        (node) => {
-          elementRef.current = node;
-          if (typeof ref === "function") {
-            ref(node);
-          } else if (ref !== null) {
-            ref.current = node;
-          }
-        },
-        [ref]
-      )
-    });
-  });
-  ReactComponent.displayName = displayName ?? elementClass.name;
-  return ReactComponent;
-}
-function setProperty(node, name, value) {
-  var _a;
-  node[name] = value;
-  if (value == null && name in (((_a = globalThis.HTMLElement) == null ? void 0 : _a.prototype) ?? {})) {
-    node.removeAttribute(name);
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
   }
-}
-
-// dist/react.ts
-var react_default = createComponent({
-  react: react__WEBPACK_IMPORTED_MODULE_0__,
-  tagName: "youtube-video",
-  elementClass: _youtube_video_element_js__WEBPACK_IMPORTED_MODULE_1__["default"],
-  toAttributeName(propName) {
-    if (propName === "muted") return "";
-    if (propName === "defaultMuted") return "muted";
-    return defaultToAttributeName(propName);
-  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var __publicField = (obj, key, value) => {
+  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  return value;
+};
+var YouTube_exports = {};
+__export(YouTube_exports, {
+  default: () => YouTube
 });
-
-/*! Bundled license information:
-
-ce-la-react/dist/ce-la-react.js:
-  (**
-   * @license
-   * Copyright 2018 Google LLC
-   * SPDX-License-Identifier: BSD-3-Clause
-   *
-   * Modified version of `@lit/react` for vanilla custom elements with support for SSR.
-   *)
-*/
-
-
-/***/ }),
-
-/***/ "./node_modules/youtube-video-element/dist/youtube-video-element.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/youtube-video-element/dist/youtube-video-element.js ***!
-  \**************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ youtube_video_element_default)
-/* harmony export */ });
-const EMBED_BASE = "https://www.youtube.com/embed";
-const EMBED_BASE_NOCOOKIE = "https://www.youtube-nocookie.com/embed";
-const API_URL = "https://www.youtube.com/iframe_api";
-const API_GLOBAL = "YT";
-const API_GLOBAL_READY = "onYouTubeIframeAPIReady";
-const VIDEO_MATCH_SRC = /(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|shorts\/|live\/))((\w|-){11})/;
-const PLAYLIST_MATCH_SRC = /(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/.*?[?&]list=)([\w_-]+)/;
-function getTemplateHTML(attrs, props = {}) {
-  const iframeAttrs = {
-    src: serializeIframeUrl(attrs, props),
-    frameborder: 0,
-    width: "100%",
-    height: "100%",
-    allow: "accelerometer; fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  };
-  if (props.config) {
-    iframeAttrs["data-config"] = JSON.stringify(props.config);
-  }
-  return (
-    /*html*/
-    `
-    <style>
-      :host {
-        display: inline-block;
-        line-height: 0;
-        position: relative;
-        min-width: 300px;
-        min-height: 150px;
-      }
-      iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-    </style>
-    <iframe${serializeAttributes(iframeAttrs)}></iframe>
-  `
-  );
-}
-function serializeIframeUrl(attrs, props) {
-  if (!attrs.src) return;
-  const embedBase = attrs.src.includes("-nocookie") ? EMBED_BASE_NOCOOKIE : EMBED_BASE;
-  const params = {
-    // ?controls=true is enabled by default in the iframe
-    controls: attrs.controls === "" ? null : 0,
-    autoplay: attrs.autoplay,
-    loop: attrs.loop,
-    mute: attrs.muted,
-    playsinline: attrs.playsinline,
-    preload: attrs.preload ?? "metadata",
-    // https://developers.google.com/youtube/player_parameters#Parameters
-    // origin: globalThis.location?.origin,
-    enablejsapi: 1,
-    showinfo: 0,
-    rel: 0,
-    iv_load_policy: 3,
-    modestbranding: 1,
-    ...props.config
-  };
-  if (VIDEO_MATCH_SRC.test(attrs.src)) {
-    const matches2 = attrs.src.match(VIDEO_MATCH_SRC);
-    const srcId = matches2 && matches2[1];
-    return `${embedBase}/${srcId}?${serialize(params)}`;
-  }
-  const matches = attrs.src.match(PLAYLIST_MATCH_SRC);
-  const playlistId = matches && matches[1];
-  const extendedParams = {
-    listType: "playlist",
-    list: playlistId,
-    ...params
-  };
-  return `${embedBase}?${serialize(extendedParams)}`;
-}
-class YoutubeVideoElement extends (globalThis.HTMLElement ?? class {
-}) {
-  static getTemplateHTML = getTemplateHTML;
-  static shadowRootOptions = { mode: "open" };
-  static observedAttributes = [
-    "autoplay",
-    "controls",
-    "crossorigin",
-    "loop",
-    "muted",
-    "playsinline",
-    "poster",
-    "preload",
-    "src"
-  ];
-  loadComplete = new PublicPromise();
-  #loadRequested;
-  #hasLoaded;
-  #readyState = 0;
-  #seeking = false;
-  #seekComplete;
-  isLoaded = false;
-  #error = null;
-  #config = null;
+module.exports = __toCommonJS(YouTube_exports);
+var import_react = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var import_utils = __webpack_require__(/*! ../utils */ "./node_modules/react-player/lib/utils.js");
+var import_patterns = __webpack_require__(/*! ../patterns */ "./node_modules/react-player/lib/patterns.js");
+const SDK_URL = "https://www.youtube.com/iframe_api";
+const SDK_GLOBAL = "YT";
+const SDK_GLOBAL_READY = "onYouTubeIframeAPIReady";
+const MATCH_PLAYLIST = /[?&](?:list|channel)=([a-zA-Z0-9_-]+)/;
+const MATCH_USER_UPLOADS = /user\/([a-zA-Z0-9_-]+)\/?/;
+const MATCH_NOCOOKIE = /youtube-nocookie\.com/;
+const NOCOOKIE_HOST = "https://www.youtube-nocookie.com";
+class YouTube extends import_react.Component {
   constructor() {
-    super();
-    this.#upgradeProperty("config");
+    super(...arguments);
+    __publicField(this, "callPlayer", import_utils.callPlayer);
+    __publicField(this, "parsePlaylist", (url) => {
+      if (url instanceof Array) {
+        return {
+          listType: "playlist",
+          playlist: url.map(this.getID).join(",")
+        };
+      }
+      if (MATCH_PLAYLIST.test(url)) {
+        const [, playlistId] = url.match(MATCH_PLAYLIST);
+        return {
+          listType: "playlist",
+          list: playlistId.replace(/^UC/, "UU")
+        };
+      }
+      if (MATCH_USER_UPLOADS.test(url)) {
+        const [, username] = url.match(MATCH_USER_UPLOADS);
+        return {
+          listType: "user_uploads",
+          list: username
+        };
+      }
+      return {};
+    });
+    __publicField(this, "onStateChange", (event) => {
+      const { data } = event;
+      const { onPlay, onPause, onBuffer, onBufferEnd, onEnded, onReady, loop, config: { playerVars, onUnstarted } } = this.props;
+      const { UNSTARTED, PLAYING, PAUSED, BUFFERING, ENDED, CUED } = window[SDK_GLOBAL].PlayerState;
+      if (data === UNSTARTED)
+        onUnstarted();
+      if (data === PLAYING) {
+        onPlay();
+        onBufferEnd();
+      }
+      if (data === PAUSED)
+        onPause();
+      if (data === BUFFERING)
+        onBuffer();
+      if (data === ENDED) {
+        const isPlaylist = !!this.callPlayer("getPlaylist");
+        if (loop && !isPlaylist) {
+          if (playerVars.start) {
+            this.seekTo(playerVars.start);
+          } else {
+            this.play();
+          }
+        }
+        onEnded();
+      }
+      if (data === CUED)
+        onReady();
+    });
+    __publicField(this, "mute", () => {
+      this.callPlayer("mute");
+    });
+    __publicField(this, "unmute", () => {
+      this.callPlayer("unMute");
+    });
+    __publicField(this, "ref", (container) => {
+      this.container = container;
+    });
   }
-  get config() {
-    return this.#config;
+  componentDidMount() {
+    this.props.onMount && this.props.onMount(this);
   }
-  set config(value) {
-    this.#config = value;
-  }
-  async load() {
-    if (this.#loadRequested) return;
-    if (!this.shadowRoot) {
-      this.attachShadow({ mode: "open" });
+  getID(url) {
+    if (!url || url instanceof Array || MATCH_PLAYLIST.test(url)) {
+      return null;
     }
-    const isFirstLoad = !this.#hasLoaded;
-    if (this.#hasLoaded) {
-      this.loadComplete = new PublicPromise();
-      this.isLoaded = false;
-    }
-    this.#hasLoaded = true;
-    await (this.#loadRequested = Promise.resolve());
-    this.#loadRequested = null;
-    this.#readyState = 0;
-    this.dispatchEvent(new Event("emptied"));
-    let oldApi = this.api;
-    this.api = null;
-    if (!this.src) {
-      oldApi == null ? void 0 : oldApi.destroy();
+    return url.match(import_patterns.MATCH_URL_YOUTUBE)[1];
+  }
+  load(url, isReady) {
+    const { playing, muted, playsinline, controls, loop, config, onError } = this.props;
+    const { playerVars, embedOptions } = config;
+    const id = this.getID(url);
+    if (isReady) {
+      if (MATCH_PLAYLIST.test(url) || MATCH_USER_UPLOADS.test(url) || url instanceof Array) {
+        this.player.loadPlaylist(this.parsePlaylist(url));
+        return;
+      }
+      this.player.cueVideoById({
+        videoId: id,
+        startSeconds: (0, import_utils.parseStartTime)(url) || playerVars.start,
+        endSeconds: (0, import_utils.parseEndTime)(url) || playerVars.end
+      });
       return;
     }
-    this.dispatchEvent(new Event("loadstart"));
-    let iframe = this.shadowRoot.querySelector("iframe");
-    let attrs = namedNodeMapToObject(this.attributes);
-    if (isFirstLoad && iframe) {
-      this.#config = JSON.parse(iframe.getAttribute("data-config") || "{}");
-    }
-    if (!(iframe == null ? void 0 : iframe.src) || iframe.src !== serializeIframeUrl(attrs, this)) {
-      this.shadowRoot.innerHTML = getTemplateHTML(attrs, this);
-      iframe = this.shadowRoot.querySelector("iframe");
-    }
-    const YT = await loadScript(API_URL, API_GLOBAL, API_GLOBAL_READY);
-    this.api = new YT.Player(iframe, {
-      events: {
-        onReady: () => {
-          this.#readyState = 1;
-          this.dispatchEvent(new Event("loadedmetadata"));
-          this.dispatchEvent(new Event("durationchange"));
-          this.dispatchEvent(new Event("volumechange"));
-          this.dispatchEvent(new Event("loadcomplete"));
-          this.isLoaded = true;
-          this.loadComplete.resolve();
+    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY, (YT) => YT.loaded).then((YT) => {
+      if (!this.container)
+        return;
+      this.player = new YT.Player(this.container, {
+        width: "100%",
+        height: "100%",
+        videoId: id,
+        playerVars: {
+          autoplay: playing ? 1 : 0,
+          mute: muted ? 1 : 0,
+          controls: controls ? 1 : 0,
+          start: (0, import_utils.parseStartTime)(url),
+          end: (0, import_utils.parseEndTime)(url),
+          origin: window.location.origin,
+          playsinline: playsinline ? 1 : 0,
+          ...this.parsePlaylist(url),
+          ...playerVars
         },
-        onError: (error) => {
-          console.error(error);
-          this.#error = {
-            code: error.data,
-            message: `YouTube iframe player error #${error.data}; visit https://developers.google.com/youtube/iframe_api_reference#onError for the full error message.`
-          };
-          this.dispatchEvent(new Event("error"));
-        }
-      }
-    });
-    let playFired = false;
-    this.api.addEventListener("onStateChange", (event) => {
-      var _a;
-      const state = event.data;
-      if (state === YT.PlayerState.PLAYING || state === YT.PlayerState.BUFFERING) {
-        if (!playFired) {
-          playFired = true;
-          this.dispatchEvent(new Event("play"));
-        }
-      }
-      if (state === YT.PlayerState.PLAYING) {
-        if (this.seeking) {
-          this.#seeking = false;
-          (_a = this.#seekComplete) == null ? void 0 : _a.resolve();
-          this.dispatchEvent(new Event("seeked"));
-        }
-        this.#readyState = 3;
-        this.dispatchEvent(new Event("playing"));
-      } else if (state === YT.PlayerState.PAUSED) {
-        const diff = Math.abs(this.currentTime - lastCurrentTime);
-        if (!this.seeking && diff > 0.1) {
-          this.#seeking = true;
-          this.dispatchEvent(new Event("seeking"));
-        }
-        playFired = false;
-        this.dispatchEvent(new Event("pause"));
-      }
-      if (state === YT.PlayerState.ENDED) {
-        playFired = false;
-        this.dispatchEvent(new Event("pause"));
-        this.dispatchEvent(new Event("ended"));
-        if (this.loop) {
-          this.play();
-        }
-      }
-    });
-    this.api.addEventListener("onPlaybackRateChange", () => {
-      this.dispatchEvent(new Event("ratechange"));
-    });
-    this.api.addEventListener("onVolumeChange", () => {
-      this.dispatchEvent(new Event("volumechange"));
-    });
-    this.api.addEventListener("onVideoProgress", () => {
-      this.dispatchEvent(new Event("timeupdate"));
-    });
-    await this.loadComplete;
-    let lastCurrentTime = 0;
-    setInterval(() => {
-      var _a;
-      const diff = Math.abs(this.currentTime - lastCurrentTime);
-      const bufferedEnd = this.buffered.end(this.buffered.length - 1);
-      if (this.seeking && bufferedEnd > 0.1) {
-        this.#seeking = false;
-        (_a = this.#seekComplete) == null ? void 0 : _a.resolve();
-        this.dispatchEvent(new Event("seeked"));
-      } else if (!this.seeking && diff > 0.1) {
-        this.#seeking = true;
-        this.dispatchEvent(new Event("seeking"));
-      }
-      lastCurrentTime = this.currentTime;
-    }, 50);
-    let lastBufferedEnd;
-    const progressInterval = setInterval(() => {
-      const bufferedEnd = this.buffered.end(this.buffered.length - 1);
-      if (bufferedEnd >= this.duration) {
-        clearInterval(progressInterval);
-        this.#readyState = 4;
-      }
-      if (lastBufferedEnd != bufferedEnd) {
-        lastBufferedEnd = bufferedEnd;
-        this.dispatchEvent(new Event("progress"));
-      }
-    }, 100);
-  }
-  async attributeChangedCallback(attrName, oldValue, newValue) {
-    if (oldValue === newValue) return;
-    switch (attrName) {
-      case "src":
-      case "autoplay":
-      case "controls":
-      case "loop":
-      case "playsinline": {
-        this.load();
-      }
+        events: {
+          onReady: () => {
+            if (loop) {
+              this.player.setLoop(true);
+            }
+            this.props.onReady();
+          },
+          onPlaybackRateChange: (event) => this.props.onPlaybackRateChange(event.data),
+          onPlaybackQualityChange: (event) => this.props.onPlaybackQualityChange(event),
+          onStateChange: this.onStateChange,
+          onError: (event) => onError(event.data)
+        },
+        host: MATCH_NOCOOKIE.test(url) ? NOCOOKIE_HOST : void 0,
+        ...embedOptions
+      });
+    }, onError);
+    if (embedOptions.events) {
+      console.warn("Using `embedOptions.events` will likely break things. Use ReactPlayer\u2019s callback props instead, eg onReady, onPlay, onPause");
     }
   }
-  async play() {
-    var _a;
-    this.#seekComplete = null;
-    await this.loadComplete;
-    (_a = this.api) == null ? void 0 : _a.playVideo();
-    return createPlayPromise(this);
+  play() {
+    this.callPlayer("playVideo");
   }
-  async pause() {
-    var _a;
-    await this.loadComplete;
-    return (_a = this.api) == null ? void 0 : _a.pauseVideo();
+  pause() {
+    this.callPlayer("pauseVideo");
   }
-  get seeking() {
-    return this.#seeking;
+  stop() {
+    if (!document.body.contains(this.callPlayer("getIframe")))
+      return;
+    this.callPlayer("stopVideo");
   }
-  get readyState() {
-    return this.#readyState;
-  }
-  get src() {
-    return this.getAttribute("src");
-  }
-  set src(val) {
-    if (this.src == val) return;
-    this.setAttribute("src", val);
-  }
-  get error() {
-    return this.#error;
-  }
-  /* onStateChange
-    -1 (unstarted)
-    0 (ended)
-    1 (playing)
-    2 (paused)
-    3 (buffering)
-    5 (video cued).
-  */
-  get paused() {
-    var _a, _b;
-    if (!this.isLoaded) return !this.autoplay;
-    return [-1, 0, 2, 5].includes((_b = (_a = this.api) == null ? void 0 : _a.getPlayerState) == null ? void 0 : _b.call(_a));
-  }
-  get duration() {
-    var _a, _b;
-    return ((_b = (_a = this.api) == null ? void 0 : _a.getDuration) == null ? void 0 : _b.call(_a)) ?? NaN;
-  }
-  get autoplay() {
-    return this.hasAttribute("autoplay");
-  }
-  set autoplay(val) {
-    if (this.autoplay == val) return;
-    this.toggleAttribute("autoplay", Boolean(val));
-  }
-  get buffered() {
-    var _a, _b;
-    if (!this.isLoaded) return createTimeRanges();
-    const progress = ((_a = this.api) == null ? void 0 : _a.getVideoLoadedFraction()) * ((_b = this.api) == null ? void 0 : _b.getDuration());
-    if (progress > 0) {
-      return createTimeRanges(0, progress);
-    }
-    return createTimeRanges();
-  }
-  get controls() {
-    return this.hasAttribute("controls");
-  }
-  set controls(val) {
-    if (this.controls == val) return;
-    this.toggleAttribute("controls", Boolean(val));
-  }
-  get currentTime() {
-    var _a, _b;
-    return ((_b = (_a = this.api) == null ? void 0 : _a.getCurrentTime) == null ? void 0 : _b.call(_a)) ?? 0;
-  }
-  set currentTime(val) {
-    if (this.currentTime == val) return;
-    this.#seekComplete = new PublicPromise();
-    this.loadComplete.then(() => {
-      var _a, _b;
-      (_a = this.api) == null ? void 0 : _a.seekTo(val, true);
-      if (this.paused) {
-        (_b = this.#seekComplete) == null ? void 0 : _b.then(() => {
-          var _a2;
-          if (!this.#seekComplete) return;
-          (_a2 = this.api) == null ? void 0 : _a2.pauseVideo();
-        });
-      }
-    });
-  }
-  set defaultMuted(val) {
-    if (this.defaultMuted == val) return;
-    this.toggleAttribute("muted", Boolean(val));
-  }
-  get defaultMuted() {
-    return this.hasAttribute("muted");
-  }
-  get loop() {
-    return this.hasAttribute("loop");
-  }
-  set loop(val) {
-    if (this.loop == val) return;
-    this.toggleAttribute("loop", Boolean(val));
-  }
-  set muted(val) {
-    if (this.muted == val) return;
-    this.loadComplete.then(() => {
-      var _a, _b;
-      val ? (_a = this.api) == null ? void 0 : _a.mute() : (_b = this.api) == null ? void 0 : _b.unMute();
-    });
-  }
-  get muted() {
-    var _a, _b;
-    if (!this.isLoaded) return this.defaultMuted;
-    return (_b = (_a = this.api) == null ? void 0 : _a.isMuted) == null ? void 0 : _b.call(_a);
-  }
-  get playbackRate() {
-    var _a, _b;
-    return ((_b = (_a = this.api) == null ? void 0 : _a.getPlaybackRate) == null ? void 0 : _b.call(_a)) ?? 1;
-  }
-  set playbackRate(val) {
-    if (this.playbackRate == val) return;
-    this.loadComplete.then(() => {
-      var _a;
-      (_a = this.api) == null ? void 0 : _a.setPlaybackRate(val);
-    });
-  }
-  get playsInline() {
-    return this.hasAttribute("playsinline");
-  }
-  set playsInline(val) {
-    if (this.playsInline == val) return;
-    this.toggleAttribute("playsinline", Boolean(val));
-  }
-  get poster() {
-    return this.getAttribute("poster");
-  }
-  set poster(val) {
-    if (this.poster == val) return;
-    this.setAttribute("poster", `${val}`);
-  }
-  set volume(val) {
-    if (this.volume == val) return;
-    this.loadComplete.then(() => {
-      var _a;
-      (_a = this.api) == null ? void 0 : _a.setVolume(val * 100);
-    });
-  }
-  get volume() {
-    var _a;
-    if (!this.isLoaded) return 1;
-    return ((_a = this.api) == null ? void 0 : _a.getVolume()) / 100;
-  }
-  // This is a pattern to update property values that are set before
-  // the custom element is upgraded.
-  // https://web.dev/custom-elements-best-practices/#make-properties-lazy
-  #upgradeProperty(prop) {
-    if (Object.prototype.hasOwnProperty.call(this, prop)) {
-      const value = this[prop];
-      delete this[prop];
-      this[prop] = value;
+  seekTo(amount, keepPlaying = false) {
+    this.callPlayer("seekTo", amount);
+    if (!keepPlaying && !this.props.playing) {
+      this.pause();
     }
   }
-}
-function serializeAttributes(attrs) {
-  let html = "";
-  for (const key in attrs) {
-    const value = attrs[key];
-    if (value === "") html += ` ${escapeHtml(key)}`;
-    else html += ` ${escapeHtml(key)}="${escapeHtml(`${value}`)}"`;
+  setVolume(fraction) {
+    this.callPlayer("setVolume", fraction * 100);
   }
-  return html;
-}
-function escapeHtml(str) {
-  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;").replace(/`/g, "&#x60;");
-}
-function serialize(props) {
-  return String(new URLSearchParams(boolToBinary(props)));
-}
-function boolToBinary(props) {
-  let p = {};
-  for (let key in props) {
-    let val = props[key];
-    if (val === true || val === "") p[key] = 1;
-    else if (val === false) p[key] = 0;
-    else if (val != null) p[key] = val;
+  setPlaybackRate(rate) {
+    this.callPlayer("setPlaybackRate", rate);
   }
-  return p;
-}
-function namedNodeMapToObject(namedNodeMap) {
-  let obj = {};
-  for (let attr of namedNodeMap) {
-    obj[attr.name] = attr.value;
+  setLoop(loop) {
+    this.callPlayer("setLoop", loop);
   }
-  return obj;
-}
-const loadScriptCache = {};
-async function loadScript(src, globalName, readyFnName) {
-  if (loadScriptCache[src]) return loadScriptCache[src];
-  if (globalName && self[globalName]) {
-    await delay(0);
-    return self[globalName];
+  getDuration() {
+    return this.callPlayer("getDuration");
   }
-  return loadScriptCache[src] = new Promise(function(resolve, reject) {
-    const script = document.createElement("script");
-    script.src = src;
-    const ready = () => resolve(self[globalName]);
-    if (readyFnName) self[readyFnName] = ready;
-    script.onload = () => !readyFnName && ready();
-    script.onerror = reject;
-    document.head.append(script);
-  });
-}
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-function promisify(fn) {
-  return (...args) => new Promise((resolve) => {
-    fn(...args, (...res) => {
-      if (res.length > 1) resolve(res);
-      else resolve(res[0]);
-    });
-  });
-}
-function createPlayPromise(player) {
-  return promisify((event, cb) => {
-    let fn;
-    player.addEventListener(
-      event,
-      fn = () => {
-        player.removeEventListener(event, fn);
-        cb();
-      }
-    );
-  })("playing");
-}
-class PublicPromise extends Promise {
-  constructor(executor = () => {
-  }) {
-    let res, rej;
-    super((resolve, reject) => {
-      executor(resolve, reject);
-      res = resolve;
-      rej = reject;
-    });
-    this.resolve = res;
-    this.reject = rej;
+  getCurrentTime() {
+    return this.callPlayer("getCurrentTime");
+  }
+  getSecondsLoaded() {
+    return this.callPlayer("getVideoLoadedFraction") * this.getDuration();
+  }
+  render() {
+    const { display } = this.props;
+    const style = {
+      width: "100%",
+      height: "100%",
+      display
+    };
+    return /* @__PURE__ */ import_react.default.createElement("div", { style }, /* @__PURE__ */ import_react.default.createElement("div", { ref: this.ref }));
   }
 }
-function createTimeRanges(start, end) {
-  if (Array.isArray(start)) {
-    return createTimeRangesObj(start);
-  } else if (start == null || end == null || start === 0 && end === 0) {
-    return createTimeRangesObj([[0, 0]]);
-  }
-  return createTimeRangesObj([[start, end]]);
-}
-function createTimeRangesObj(ranges) {
-  Object.defineProperties(ranges, {
-    start: {
-      value: (i) => ranges[i][0]
-    },
-    end: {
-      value: (i) => ranges[i][1]
-    }
-  });
-  return ranges;
-}
-if (globalThis.customElements && !globalThis.customElements.get("youtube-video")) {
-  globalThis.customElements.define("youtube-video", YoutubeVideoElement);
-}
-var youtube_video_element_default = YoutubeVideoElement;
-
+__publicField(YouTube, "displayName", "YouTube");
+__publicField(YouTube, "canPlay", import_patterns.canPlay.youtube);
 
 
 /***/ })

@@ -1,9 +1,9 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["reactPlayerVimeo"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["reactPlayerStreamable"],{
 
-/***/ "./node_modules/react-player/lib/players/Vimeo.js":
-/*!********************************************************!*\
-  !*** ./node_modules/react-player/lib/players/Vimeo.js ***!
-  \********************************************************/
+/***/ "./node_modules/react-player/lib/players/Streamable.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/react-player/lib/players/Streamable.js ***!
+  \*************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var __create = Object.create;
@@ -38,102 +38,69 @@ var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
   return value;
 };
-var Vimeo_exports = {};
-__export(Vimeo_exports, {
-  default: () => Vimeo
+var Streamable_exports = {};
+__export(Streamable_exports, {
+  default: () => Streamable
 });
-module.exports = __toCommonJS(Vimeo_exports);
+module.exports = __toCommonJS(Streamable_exports);
 var import_react = __toESM(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var import_utils = __webpack_require__(/*! ../utils */ "./node_modules/react-player/lib/utils.js");
 var import_patterns = __webpack_require__(/*! ../patterns */ "./node_modules/react-player/lib/patterns.js");
-const SDK_URL = "https://player.vimeo.com/api/player.js";
-const SDK_GLOBAL = "Vimeo";
-const cleanUrl = (url) => {
-  return url.replace("/manage/videos", "");
-};
-class Vimeo extends import_react.Component {
+const SDK_URL = "https://cdn.embed.ly/player-0.1.0.min.js";
+const SDK_GLOBAL = "playerjs";
+class Streamable extends import_react.Component {
   constructor() {
     super(...arguments);
-    // Prevent checking isLoading when URL changes
     __publicField(this, "callPlayer", import_utils.callPlayer);
     __publicField(this, "duration", null);
     __publicField(this, "currentTime", null);
     __publicField(this, "secondsLoaded", null);
     __publicField(this, "mute", () => {
-      this.setMuted(true);
+      this.callPlayer("mute");
     });
     __publicField(this, "unmute", () => {
-      this.setMuted(false);
+      this.callPlayer("unmute");
     });
-    __publicField(this, "ref", (container) => {
-      this.container = container;
+    __publicField(this, "ref", (iframe) => {
+      this.iframe = iframe;
     });
   }
   componentDidMount() {
     this.props.onMount && this.props.onMount(this);
   }
   load(url) {
-    this.duration = null;
-    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((Vimeo2) => {
-      if (!this.container)
+    (0, import_utils.getSDK)(SDK_URL, SDK_GLOBAL).then((playerjs) => {
+      if (!this.iframe)
         return;
-      const { playerOptions, title } = this.props.config;
-      this.player = new Vimeo2.Player(this.container, {
-        url: cleanUrl(url),
-        autoplay: this.props.playing,
-        muted: this.props.muted,
-        loop: this.props.loop,
-        playsinline: this.props.playsinline,
-        controls: this.props.controls,
-        ...playerOptions
-      });
-      this.player.ready().then(() => {
-        const iframe = this.container.querySelector("iframe");
-        iframe.style.width = "100%";
-        iframe.style.height = "100%";
-        if (title) {
-          iframe.title = title;
-        }
-      }).catch(this.props.onError);
-      this.player.on("loaded", () => {
-        this.props.onReady();
-        this.refreshDuration();
-      });
-      this.player.on("play", () => {
-        this.props.onPlay();
-        this.refreshDuration();
-      });
+      this.player = new playerjs.Player(this.iframe);
+      this.player.setLoop(this.props.loop);
+      this.player.on("ready", this.props.onReady);
+      this.player.on("play", this.props.onPlay);
       this.player.on("pause", this.props.onPause);
-      this.player.on("seeked", (e) => this.props.onSeek(e.seconds));
+      this.player.on("seeked", this.props.onSeek);
       this.player.on("ended", this.props.onEnded);
       this.player.on("error", this.props.onError);
-      this.player.on("timeupdate", ({ seconds }) => {
+      this.player.on("timeupdate", ({ duration, seconds }) => {
+        this.duration = duration;
         this.currentTime = seconds;
       });
-      this.player.on("progress", ({ seconds }) => {
-        this.secondsLoaded = seconds;
+      this.player.on("buffered", ({ percent }) => {
+        if (this.duration) {
+          this.secondsLoaded = this.duration * percent;
+        }
       });
-      this.player.on("bufferstart", this.props.onBuffer);
-      this.player.on("bufferend", this.props.onBufferEnd);
-      this.player.on("playbackratechange", (e) => this.props.onPlaybackRateChange(e.playbackRate));
+      if (this.props.muted) {
+        this.player.mute();
+      }
     }, this.props.onError);
   }
-  refreshDuration() {
-    this.player.getDuration().then((duration) => {
-      this.duration = duration;
-    });
-  }
   play() {
-    const promise = this.callPlayer("play");
-    if (promise) {
-      promise.catch(this.props.onError);
-    }
+    this.callPlayer("play");
   }
   pause() {
     this.callPlayer("pause");
   }
   stop() {
-    this.callPlayer("unload");
   }
   seekTo(seconds, keepPlaying = true) {
     this.callPlayer("setCurrentTime", seconds);
@@ -142,16 +109,10 @@ class Vimeo extends import_react.Component {
     }
   }
   setVolume(fraction) {
-    this.callPlayer("setVolume", fraction);
-  }
-  setMuted(muted) {
-    this.callPlayer("setMuted", muted);
+    this.callPlayer("setVolume", fraction * 100);
   }
   setLoop(loop) {
     this.callPlayer("setLoop", loop);
-  }
-  setPlaybackRate(rate) {
-    this.callPlayer("setPlaybackRate", rate);
   }
   getDuration() {
     return this.duration;
@@ -163,26 +124,26 @@ class Vimeo extends import_react.Component {
     return this.secondsLoaded;
   }
   render() {
-    const { display } = this.props;
+    const id = this.props.url.match(import_patterns.MATCH_URL_STREAMABLE)[1];
     const style = {
       width: "100%",
-      height: "100%",
-      overflow: "hidden",
-      display
+      height: "100%"
     };
     return /* @__PURE__ */ import_react.default.createElement(
-      "div",
+      "iframe",
       {
-        key: this.props.url,
         ref: this.ref,
-        style
+        src: `https://streamable.com/o/${id}`,
+        frameBorder: "0",
+        scrolling: "no",
+        style,
+        allow: "encrypted-media; autoplay; fullscreen;"
       }
     );
   }
 }
-__publicField(Vimeo, "displayName", "Vimeo");
-__publicField(Vimeo, "canPlay", import_patterns.canPlay.vimeo);
-__publicField(Vimeo, "forceLoad", true);
+__publicField(Streamable, "displayName", "Streamable");
+__publicField(Streamable, "canPlay", import_patterns.canPlay.streamable);
 
 
 /***/ })
