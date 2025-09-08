@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\User\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,30 +16,33 @@ use Inertia\Inertia;
 |
 */
 
-Route::redirect('/', '/prototype/login');
+Route::redirect('/', '/login');
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth', 'role:user'])
+    ->prefix('dashboard')
+    ->name('user.dashboard.')
+    ->group(function () {
+        Route::get('/', [DashboardController::class, 'index'])->name('index');
+    });
 
 Route::prefix('prototype')->name('prototype.')->group(function () {
-    route::get('/login', function () {
+    Route::get('/login', function () {
         return Inertia::render('Prototype/Login');
     })->name('login');
 
-    route::get('/register', function () {
+    Route::get('/register', function () {
         return Inertia::render('Prototype/Register');
     })->name('register');
 
-    route::get('/dashboard', function () {
+    Route::get('/dashboard', function () {
         return Inertia::render('Prototype/Dashboard');
     })->name('dashboard');
 
-    route::get('/subscriptionPlan', function () {
+    Route::get('/subscriptionPlan', function () {
         return Inertia::render('Prototype/SubscriptionPlan');
     })->name('subscriptionPlan');
 
-    route::get('/movie/{slug}', function () {
+    Route::get('/movie/{slug}', function () {
         return Inertia::render('Prototype/Movie/Show');
     })->name('movie.show');
 });
