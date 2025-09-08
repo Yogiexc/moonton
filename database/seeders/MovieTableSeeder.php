@@ -44,6 +44,7 @@ class MovieTableSeeder extends Seeder
         'is_featured' => 0,
     ],
 ];
+
         Movie::insert($movies);
     }
 }
