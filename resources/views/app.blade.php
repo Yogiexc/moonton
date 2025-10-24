@@ -23,7 +23,7 @@
         @inertia
 
         @env ('local')
-            <script src="http://localhost:8080/js/bundle.js"></script>
+            <script src="http://localhost:8080"></script>
         @endenv
     </body>
 </html>
